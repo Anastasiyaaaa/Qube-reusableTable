@@ -1,8 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-.idea
-reusabletable.iml
+.idea/*
+*.iml
 package-lock.json
 /node_modules
 /.pnp
