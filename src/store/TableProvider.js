@@ -1,7 +1,15 @@
-import { useReducer } from 'react';
+// it's table provider component, here I manage the current context
+// to data and provide the context to all components that have access
 
+// In this component I get current clicked element(column) that wanna be sorted ->
+// -> I find this element in our data array and change sort type for it ->
+// -> return updated array (column array)
+
+import { useReducer } from 'react';
 import TableContext from './table-context';
 
+//imagine, that we get this data from API
+//I added {col_sort_type: 'asc'} to each element - for helping get the sort typ is it asc or dsc
 const defaultTableState = {
   tableHeader : [
     {
@@ -62,13 +70,16 @@ const defaultTableState = {
 const tableReducer = (state, action) => {
   if (action.type === 'SORT') {
     const updateTableHeader = state.tableHeader.map(item => {
+      //get element that was clicked for updating sort type
       if (item.col_name === action.name){
+        //change asc to dsc and vice versa
         const newSortType = item.col_sort_type === 'asc' ? 'dsc' : 'asc';
+        //return element with new sort type
         return {...item, col_sort_type : newSortType}
       }
       return item
     })
-
+    //return updating array of elements
     return {
       tableHeader: updateTableHeader
     };
@@ -84,17 +95,19 @@ const TableProvider = (props) => {
   );
 
  
-
+  //function that update sort
   const sortItemInColum = (name) => {
     dispatchSortAction({ type: 'SORT', name: name });
   };
 
+  //our context that updated by event
   const tableContext = {
     tableHeader: tableState.tableHeader,
     sortFunction: sortItemInColum,
   }
 
   return (
+    //all components inside TableProvider hav access to the context
     <TableContext.Provider value={tableContext}>
       {props.children}
     </TableContext.Provider>

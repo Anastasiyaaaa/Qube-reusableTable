@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
-
+import React from 'react';
 import TableColumn from "./TableColumn";
 
 const TableRow = (props) => {
+  //send each element to column component
   const columns = props.items.map( item =>
     <TableColumn
       key={item.col_name}

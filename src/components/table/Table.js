@@ -4,6 +4,7 @@ import TableBody from "./TableBody";
 import  './Table.css';
 
 const Table = () => {
+  //simple table with TableHeader and TableBody
   return (
     <table className='table'>
       <TableHeader/>
