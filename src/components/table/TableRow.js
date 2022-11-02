@@ -2,6 +2,8 @@ import React from 'react';
 import TableColumn from "./TableColumn";
 
 const TableRow = (props) => {
+  //checking is it row for table's header or body
+  const checkHeadRow = !!props.headerRow;
   //send each element to column component
   const columns = props.items.map( item =>
     <TableColumn
@@ -13,6 +15,7 @@ const TableRow = (props) => {
       width={item.col_width}
       sort={item.col_sort}
       sortType={item.col_sort_type}
+      headerRow={checkHeadRow}
     />
   )
   return (

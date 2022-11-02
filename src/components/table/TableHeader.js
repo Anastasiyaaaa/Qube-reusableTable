@@ -9,7 +9,7 @@ const TableHeader = () => {
 
   return (
     <thead>
-      <TableRow items={tableCtx.tableHeader}/>
+      <TableRow items={tableCtx.tableHeader} headerRow={true}/>
     </thead>
     );
 };
