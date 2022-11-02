@@ -10,7 +10,7 @@ import TableContext from './table-context';
 import {defaultTableState} from "../api/data";
 
 const sortTableHeaderFunction = (state, action) => {
-  const tableHeaderData = state.tableHeader.map(item => {
+  return state.tableHeader.map(item => {
     //get element that was clicked for updating sort type
     if (item.col_name === action.name) {
       //change asc to dsc and vice versa
@@ -20,42 +20,37 @@ const sortTableHeaderFunction = (state, action) => {
     }
     return item
   })
-  return tableHeaderData
 };
 
 const sortStringDsc = (data) => {
-  const updData = data.sort((a, b) => {
+  return data.sort((a, b) => {
     return a.label.toLowerCase() >= b.label.toLowerCase()
       ? 1
       : -1
   })
-  return updData;
 }
 const sortStringAsc = (data) => {
-  const updData = data.sort((a, b) => {
+  return data.sort((a, b) => {
     return a.label.toLowerCase() >= b.label.toLowerCase()
       ? -1
       : 1
   })
-  return updData;
 }
 const sortDataAsc = (data) => {
-  const updData = data.sort((a, b) => {
+  return data.sort((a, b) => {
     return a.label.localeCompare(b.label);
   })
-  return updData;
 }
 const sortDataDsc = (data) => {
-  const updData = data.sort((a, b) => {
+  return data.sort((a, b) => {
     return b.label.localeCompare(a.label);
   })
-  return updData;
 }
 const sortTableBodyFunction = (state, action) => {
   let dataForSort = [];
   //create temp array with label by clicked column for sort
   state.tableBody.forEach((item, i) => {
-    //find needed column in row by col_name that was clicked in theader
+    //find needed column in row by col_name that was clicked in tHeader
     const labelArray = item.find(item => item.col_name === action.name)
     //added to new arr for sort each label from column label and current index
     dataForSort.push({label: labelArray.col_label, indexInCurrentData: i})
