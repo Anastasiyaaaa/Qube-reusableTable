@@ -1,7 +1,7 @@
 import React from 'react';
 import TableHeader from "./TableHeader";
 import TableBody from "./TableBody";
-import  './Table.css';
+import './Table.css';
 
 const Table = () => {
   //simple table with TableHeader and TableBody

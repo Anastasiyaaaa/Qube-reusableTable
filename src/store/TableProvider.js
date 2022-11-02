@@ -5,86 +5,97 @@
 // -> I find this element in our data array and change sort type for it ->
 // -> return updated array (column array)
 
-import { useReducer } from 'react';
+import {useReducer} from 'react';
 import TableContext from './table-context';
+import {defaultTableState} from "../api/data";
 
-//imagine, that we get this data from API
-//I added {col_sort_type: 'asc'} to each element - for helping get the sort typ is it asc or dsc
-const defaultTableState = {
-  tableHeader : [
-    {
-      col_name : 'expand',
-      col_visible: true,
-      col_label: '',
-      col_type: 'symbol',
-      col_width: 5,
-      col_sort: null,
-      col_sort_type: 'asc',
-    },
-    {
-      col_name : 'skreenId',
-      col_visible: true,
-      col_label: 'Screen',
-      col_type: 'string',
-      col_width: 25,
-      col_sort: false,
-      col_sort_type: 'asc',
-    },
-    {
-      col_name : 'locationId',
-      col_visible: true,
-      col_label: 'Location',
-      col_type: 'string',
-      col_width: 20,
-      col_sort: true,
-      col_sort_type: 'asc',
-    }, {
-      col_name : 'schDate',
-      col_visible: true,
-      col_label: 'Date',
-      col_type: 'date',
-      col_width: 15,
-      col_sort: true,
-      col_sort_type: 'asc',
-    }, {
-      col_name : 'showTime',
-      col_visible: true,
-      col_label: 'Show Time',
-      col_type: 'time',
-      col_width: 15,
-      col_sort: true,
-      col_sort_type: 'asc',
-    },
-    {
-      col_name : 'logStatus',
-      col_visible: true,
-      col_label: 'Play Log Status',
-      col_type: 'string',
-      col_width: 20,
-      col_sort: true,
-      col_sort_type: 'asc',
+const sortTableHeaderFunction = (state, action) => {
+  return state.tableHeader.map(item => {
+    //get element that was clicked for updating sort type
+    if (item.col_name === action.name) {
+      //change asc to dsc and vice versa
+      const newSortType = item.col_sort_type === 'asc' ? 'dsc' : 'asc';
+      //return element with new sort type
+      return {...item, col_sort_type: newSortType}
     }
-  ]
+    return item
+  })
 };
 
+const sortStringDsc = (data) => {
+  return data.sort((a, b) => {
+    return a.label.toLowerCase() >= b.label.toLowerCase()
+      ? 1
+      : -1
+  })
+}
+const sortStringAsc = (data) => {
+  return data.sort((a, b) => {
+    return a.label.toLowerCase() >= b.label.toLowerCase()
+      ? -1
+      : 1
+  })
+}
+const sortDataAsc = (data) => {
+  return data.sort((a, b) => {
+    return a.label.localeCompare(b.label);
+  })
+}
+const sortDataDsc = (data) => {
+  return data.sort((a, b) => {
+    return b.label.localeCompare(a.label);
+  })
+}
+const sortTableBodyFunction = (state, action) => {
+  let dataForSort = [];
+  //create temp array with label by clicked column for sort
+  state.tableBody.forEach((item, i) => {
+    //find needed column in row by col_name that was clicked in tHeader
+    const labelArray = item.find(item => item.col_name === action.name)
+    //added to new arr for sort each label from column label and current index
+    dataForSort.push({label: labelArray.col_label, indexInCurrentData: i})
+  })
+
+  //array with sorted column's label + index of this element in our current dataTable
+  let sortedColumnData;
+
+  //sort data depending on type
+  if (action.elementType === 'string' && action.sortType === 'dsc') {
+    sortedColumnData = sortStringDsc(dataForSort);
+  }
+  if (action.elementType === 'string' && action.sortType === 'asc') {
+    sortedColumnData = sortStringAsc(dataForSort);
+  }
+  if (action.sortType === 'asc') {
+    sortedColumnData = sortDataAsc(dataForSort);
+  }
+  if (action.sortType === 'dsc') {
+    sortedColumnData = sortDataDsc(dataForSort);
+  }
+  console.log(sortedColumnData)
+  //update order
+  let updTableBody = []
+  sortedColumnData.forEach((item, index) => {
+    //we know, that arr sortedColumnData - return sorted list with label and
+    //with indexInCurrentData, so we can rewrite current global data array in another order
+    //one by one add row in correct oder to the new array
+    updTableBody[index] = state.tableBody[item.indexInCurrentData];
+  })
+
+  return updTableBody
+}
+
 const tableReducer = (state, action) => {
-  if (action.type === 'SORT') {
-    const updateTableHeader = state.tableHeader.map(item => {
-      //get element that was clicked for updating sort type
-      if (item.col_name === action.name){
-        //change asc to dsc and vice versa
-        const newSortType = item.col_sort_type === 'asc' ? 'dsc' : 'asc';
-        //return element with new sort type
-        return {...item, col_sort_type : newSortType}
-      }
-      return item
-    })
+  if (action.type === 'SORT_DSC') {
+    const updatedTableHeaderData = sortTableHeaderFunction(state, action);
+    const updatedTableBodyData = sortTableBodyFunction(state, action);
     //return updating array of elements
     return {
-      tableHeader: updateTableHeader
+      tableHeader: updatedTableHeaderData,
+      tableBody: updatedTableBodyData
+      // updArr
     };
   }
-
   return defaultTableState;
 };
 
@@ -94,16 +105,17 @@ const TableProvider = (props) => {
     defaultTableState
   );
 
- 
   //function that update sort
-  const sortItemInColum = (name) => {
-    dispatchSortAction({ type: 'SORT', name: name });
+  const sortItemInColum = (name, type, sortType) => {
+    dispatchSortAction({type: 'SORT_DSC', name: name, elementType: type, sortType: sortType});
   };
 
   //our context that updated by event
   const tableContext = {
     tableHeader: tableState.tableHeader,
+    tableBody: tableState.tableBody,
     sortFunction: sortItemInColum,
+
   }
 
   return (
