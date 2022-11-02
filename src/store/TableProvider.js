@@ -5,18 +5,18 @@
 // -> I find this element in our data array and change sort type for it ->
 // -> return updated array (column array)
 
-import { useReducer } from 'react';
+import {useReducer} from 'react';
 import TableContext from './table-context';
 import {defaultTableState} from "../api/data";
 
 const sortTableHeaderFunction = (state, action) => {
   const tableHeaderData = state.tableHeader.map(item => {
     //get element that was clicked for updating sort type
-    if (item.col_name === action.name){
+    if (item.col_name === action.name) {
       //change asc to dsc and vice versa
       const newSortType = item.col_sort_type === 'asc' ? 'dsc' : 'asc';
       //return element with new sort type
-      return {...item, col_sort_type : newSortType}
+      return {...item, col_sort_type: newSortType}
     }
     return item
   })
@@ -71,7 +71,7 @@ const sortTableBodyFunction = (state, action) => {
   if (action.elementType === 'string' && action.sortType === 'asc') {
     sortedColumnData = sortStringAsc(dataForSort);
   }
-  if ( action.sortType === 'asc') {
+  if (action.sortType === 'asc') {
     sortedColumnData = sortDataAsc(dataForSort);
   }
   if (action.sortType === 'dsc') {
@@ -112,7 +112,7 @@ const TableProvider = (props) => {
 
   //function that update sort
   const sortItemInColum = (name, type, sortType) => {
-    dispatchSortAction({ type: 'SORT_DSC', name: name, elementType: type, sortType:  sortType});
+    dispatchSortAction({type: 'SORT_DSC', name: name, elementType: type, sortType: sortType});
   };
 
   //our context that updated by event

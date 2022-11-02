@@ -11,7 +11,7 @@ const TableBody = () => {
 
   return (
     <tbody>
-      {row}
+    {row}
     </tbody>
   );
 };

@@ -26,7 +26,7 @@ const TableColumn = (props) => {
     <>
       {visible && column}
     </>
-    );
+  );
 };
 
 export default TableColumn;

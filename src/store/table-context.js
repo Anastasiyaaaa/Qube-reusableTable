@@ -2,9 +2,10 @@
 import React from 'react';
 
 const TableContext = React.createContext({
-    tableHeader : [],
-    tableBody : [],
-    sortFunction: (name) => {}
+    tableHeader: [],
+    tableBody: [],
+    sortFunction: (name) => {
+    }
   }
 );
 
