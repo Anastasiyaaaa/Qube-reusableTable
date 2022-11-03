@@ -14,7 +14,6 @@ const TableRow = (props) => {
       type={item.col_type}
       width={item.col_width}
       sort={item.col_sort}
-      sortType={item.col_sort_type}
       headerRow={checkHeadRow}
     />
   )
