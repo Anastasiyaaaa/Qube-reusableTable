@@ -3,7 +3,7 @@ import tableContext from "../../store/table-context";
 
 const TableColumn = (props) => {
   const tableCtx = useContext(tableContext);
-  const {headerRow, name, visible, label, type, width, sort, sortType} = props;
+  const {headerRow, name, visible, label, type, width, sort} = props;
   //use function from <TableProvider> to change the sort
 
   const sortItemsHandler = () => {
