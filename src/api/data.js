@@ -1,5 +1,5 @@
 import React from 'react';
-//I added {col_sort_type: 'asc'} to each element - for helping get the sort typ is it asc or dsc
+//I changed {col_sort: 'asc'} to each element - for helping get the sort typ is it asc or dsc
 export const defaultTableState = {
   tableHeader: [
     {
@@ -9,7 +9,6 @@ export const defaultTableState = {
       col_type: 'symbol',
       col_width: 5,
       col_sort: null,
-      col_sort_type: 'asc',
     },
     {
       col_name: 'skreenId',
@@ -17,8 +16,7 @@ export const defaultTableState = {
       col_label: 'Screen',
       col_type: 'string',
       col_width: 25,
-      col_sort: false,
-      col_sort_type: 'asc',
+      col_sort: null,
     },
     {
       col_name: 'locationId',
@@ -26,8 +24,7 @@ export const defaultTableState = {
       col_label: 'Location',
       col_type: 'string',
       col_width: 20,
-      col_sort: true,
-      col_sort_type: 'asc',
+      col_sort: 'asc',
     },
     {
       col_name: 'schDate',
@@ -35,8 +32,7 @@ export const defaultTableState = {
       col_label: 'Date',
       col_type: 'date',
       col_width: 15,
-      col_sort: true,
-      col_sort_type: 'asc',
+      col_sort: 'asc',
     },
     {
       col_name: 'showTime',
@@ -44,8 +40,7 @@ export const defaultTableState = {
       col_label: 'Show Time',
       col_type: 'time',
       col_width: 15,
-      col_sort: true,
-      col_sort_type: 'asc',
+      col_sort: 'asc',
     },
     {
       col_name: 'logStatus',
@@ -53,8 +48,7 @@ export const defaultTableState = {
       col_label: 'Play Log Status',
       col_type: 'string',
       col_width: 20,
-      col_sort: true,
-      col_sort_type: 'asc',
+      col_sort: 'asc',
     }
   ],
   tableBody: [
@@ -66,7 +60,6 @@ export const defaultTableState = {
         col_type: 'symbol',
         col_width: 5,
         col_sort: null,
-        col_sort_type: 'asc',
       },
       {
         col_name: 'skreenId',
@@ -74,8 +67,7 @@ export const defaultTableState = {
         col_label: 'f9d78djd9j34',
         col_type: 'string',
         col_width: 25,
-        col_sort: false,
-        col_sort_type: 'asc',
+        col_sort: null,
       },
       {
         col_name: 'locationId',
@@ -83,8 +75,7 @@ export const defaultTableState = {
         col_label: 'USA',
         col_type: 'string',
         col_width: 20,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'schDate',
@@ -93,8 +84,7 @@ export const defaultTableState = {
         col_label: '2020-10-11',
         col_type: 'date',
         col_width: 15,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'showTime',
@@ -102,8 +92,7 @@ export const defaultTableState = {
         col_label: '17:03:12',
         col_type: 'time',
         col_width: 15,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'logStatus',
@@ -111,8 +100,7 @@ export const defaultTableState = {
         col_label: 'Play body',
         col_type: 'string',
         col_width: 20,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       }
     ],
     [
@@ -123,7 +111,6 @@ export const defaultTableState = {
         col_type: 'symbol',
         col_width: 5,
         col_sort: null,
-        col_sort_type: 'asc',
       },
       {
         col_name: 'skreenId',
@@ -131,8 +118,7 @@ export const defaultTableState = {
         col_label: '6yrurf9d78djd9j34',
         col_type: 'string',
         col_width: 25,
-        col_sort: false,
-        col_sort_type: 'asc',
+        col_sort: null,
       },
       {
         col_name: 'locationId',
@@ -140,8 +126,7 @@ export const defaultTableState = {
         col_label: 'Canada',
         col_type: 'string',
         col_width: 20,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'schDate',
@@ -150,8 +135,7 @@ export const defaultTableState = {
         col_label: '2023-03-17',
         col_type: 'date',
         col_width: 15,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'showTime',
@@ -159,8 +143,7 @@ export const defaultTableState = {
         col_label: '11:11:11',
         col_type: 'time',
         col_width: 15,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'logStatus',
@@ -168,8 +151,7 @@ export const defaultTableState = {
         col_label: 'Log Status body',
         col_type: 'string',
         col_width: 20,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       }
     ],
     [
@@ -180,7 +162,6 @@ export const defaultTableState = {
         col_type: 'symbol',
         col_width: 5,
         col_sort: null,
-        col_sort_type: 'asc',
       },
       {
         col_name: 'skreenId',
@@ -188,8 +169,7 @@ export const defaultTableState = {
         col_label: 'jd9j34f9d78d',
         col_type: 'string',
         col_width: 25,
-        col_sort: false,
-        col_sort_type: 'asc',
+        col_sort: null,
       },
       {
         col_name: 'locationId',
@@ -197,8 +177,7 @@ export const defaultTableState = {
         col_label: 'Ukraine',
         col_type: 'string',
         col_width: 20,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'schDate',
@@ -207,8 +186,7 @@ export const defaultTableState = {
         col_label: "2022-11-02",
         col_type: 'date',
         col_width: 15,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'showTime',
@@ -216,8 +194,7 @@ export const defaultTableState = {
         col_label: '15:20:15',
         col_type: 'time',
         col_width: 15,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'logStatus',
@@ -225,8 +202,7 @@ export const defaultTableState = {
         col_label: 'Status Log',
         col_type: 'string',
         col_width: 20,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       }
     ],
     [
@@ -237,7 +213,6 @@ export const defaultTableState = {
         col_type: 'symbol',
         col_width: 5,
         col_sort: null,
-        col_sort_type: 'asc',
       },
       {
         col_name: 'skreenId',
@@ -245,8 +220,7 @@ export const defaultTableState = {
         col_label: 'd9j34f9d',
         col_type: 'string',
         col_width: 25,
-        col_sort: false,
-        col_sort_type: 'asc',
+        col_sort: null,
       },
       {
         col_name: 'locationId',
@@ -254,8 +228,7 @@ export const defaultTableState = {
         col_label: 'India',
         col_type: 'string',
         col_width: 20,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'schDate',
@@ -264,8 +237,7 @@ export const defaultTableState = {
         col_label: "2023-04-22",
         col_type: 'date',
         col_width: 15,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'showTime',
@@ -273,8 +245,7 @@ export const defaultTableState = {
         col_label: '16:20:14',
         col_type: 'time',
         col_width: 15,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       },
       {
         col_name: 'logStatus',
@@ -282,8 +253,7 @@ export const defaultTableState = {
         col_label: 'Status Play',
         col_type: 'string',
         col_width: 20,
-        col_sort: true,
-        col_sort_type: 'asc',
+        col_sort: 'asc',
       }
     ]
   ]

@@ -14,9 +14,9 @@ const sortTableHeaderFunction = (state, action) => {
     //get element that was clicked for updating sort type
     if (item.col_name === action.name) {
       //change asc to dsc and vice versa
-      const newSortType = item.col_sort_type === 'asc' ? 'dsc' : 'asc';
+      const newSortType = item.col_sort === 'asc' ? 'dsc' : 'asc';
       //return element with new sort type
-      return {...item, col_sort_type: newSortType}
+      return {...item, col_sort: newSortType}
     }
     return item
   })
@@ -86,7 +86,7 @@ const sortTableBodyFunction = (state, action) => {
 }
 
 const tableReducer = (state, action) => {
-  if (action.type === 'SORT_DSC') {
+  if (action.type === 'SORT') {
     const updatedTableHeaderData = sortTableHeaderFunction(state, action);
     const updatedTableBodyData = sortTableBodyFunction(state, action);
     //return updating array of elements
@@ -106,8 +106,8 @@ const TableProvider = (props) => {
   );
 
   //function that update sort
-  const sortItemInColum = (name, type, sortType) => {
-    dispatchSortAction({type: 'SORT_DSC', name: name, elementType: type, sortType: sortType});
+  const sortItemInColum = (name, type, sort) => {
+    dispatchSortAction({type: 'SORT', name: name, elementType: type, sortType: sort});
   };
 
   //our context that updated by event

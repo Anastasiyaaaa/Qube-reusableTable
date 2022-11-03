@@ -8,18 +8,19 @@ const TableColumn = (props) => {
 
   const sortItemsHandler = () => {
     //use name - as identifier for column's element
-    tableCtx.sortFunction(name, type, sortType);
+    tableCtx.sortFunction(name, type, sort);
   }
-
-  const sortButton = sortType === 'asc' ?
-    <button onClick={sortItemsHandler}>&#8593;</button> :
-    <button onClick={sortItemsHandler}>&#8595;</button>;
 
   //column structure:
   const column = <td className='th_column' style={{width: `${width}%`}}>
     {label}
     {/*depend on sort type show button with top or bottom arrow for Header */}
-    {headerRow && sort && sortButton}
+    {headerRow && sort === 'asc' &&
+      <button onClick={sortItemsHandler}>&#8593; </button>
+    }
+    {headerRow && sort === 'dsc' &&
+      <button onClick={sortItemsHandler}>&#8595; </button>
+    }
   </td>;
 
   return (
