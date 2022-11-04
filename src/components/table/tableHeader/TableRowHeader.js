@@ -1,12 +1,10 @@
 import React from 'react';
-import TableColumn from "./TableColumn";
+import TableColumnHeader from "./TableColumnHeader";
 
-const TableRow = (props) => {
-  //checking is it row for table's header or body
-  const checkHeadRow = !!props.headerRow;
+const TableRowHeader = (props) => {
   //send each element to column component
   const columns = props.items.map(item =>
-    <TableColumn
+    <TableColumnHeader
       key={item.col_name}
       name={item.col_name}
       visible={item.col_visible}
@@ -14,7 +12,6 @@ const TableRow = (props) => {
       type={item.col_type}
       width={item.col_width}
       sort={item.col_sort}
-      headerRow={checkHeadRow}
     />
   )
   return (
@@ -24,4 +21,4 @@ const TableRow = (props) => {
   );
 };
 
-export default TableRow;
+export default TableRowHeader;

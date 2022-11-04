@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import TableRow from "./TableRow";
-import TableContext from "../../store/table-context";
+import TableContext from "../../../store/table-context";
+import TableRowHeader from "./TableRowHeader";
 
 const TableHeader = () => {
   //here we use reusable table row and send by props data
@@ -9,7 +9,7 @@ const TableHeader = () => {
 
   return (
     <thead>
-    <TableRow items={tableCtx.tableHeader} headerRow={true}/>
+    <TableRowHeader items={tableCtx.tableColumnStructure}/>
     </thead>
   );
 };

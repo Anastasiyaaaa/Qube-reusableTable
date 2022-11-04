@@ -9,113 +9,66 @@ import {useReducer} from 'react';
 import TableContext from './table-context';
 import {defaultTableState} from "../api/data";
 
-const sortTableHeaderFunction = (state, action) => {
-  return state.tableHeader.map(item => {
+
+const toggleColumnFunction = (state, action, column, case1, case2) => {
+  return state.tableColumnStructure.map(item => {
     //get element that was clicked for updating sort type
     if (item.col_name === action.name) {
       //change asc to dsc and vice versa
-      const newSortType = item.col_sort === 'asc' ? 'dsc' : 'asc';
+      console.log(item[column])
+      const newColumnValue = item[column] === case1 ? case2 : case1 ;
+      console.log(newColumnValue)
       //return element with new sort type
-      return {...item, col_sort: newSortType}
+      return {...item, [column]: newColumnValue}
     }
     return item
   })
 };
 
-const sortStringDsc = (data) => {
-  return data.sort((a, b) => {
-    return a.label.toLowerCase() >= b.label.toLowerCase()
-      ? 1
-      : -1
-  })
-}
-const sortStringAsc = (data) => {
-  return data.sort((a, b) => {
-    return a.label.toLowerCase() >= b.label.toLowerCase()
-      ? -1
-      : 1
-  })
-}
-const sortDataAsc = (data) => {
-  return data.sort((a, b) => {
-    return a.label.localeCompare(b.label);
-  })
-}
-const sortDataDsc = (data) => {
-  return data.sort((a, b) => {
-    return b.label.localeCompare(a.label);
-  })
-}
-const sortTableBodyFunction = (state, action) => {
-  let dataForSort = [];
-  //create temp array with label by clicked column for sort
-  state.tableBody.forEach((item, i) => {
-    //find needed column in row by col_name that was clicked in tHeader
-    const labelArray = item.find(item => item.col_name === action.name)
-    //added to new arr for sort each label from column label and current index
-    dataForSort.push({label: labelArray.col_label, indexInCurrentData: i})
-  })
-
-  //array with sorted column's label + index of this element in our current dataTable
-  let sortedColumnData;
-
-  //sort data depending on type
-  if (action.elementType === 'string' && action.sortType === 'dsc') {
-    sortedColumnData = sortStringDsc(dataForSort);
-  }
-  if (action.elementType === 'string' && action.sortType === 'asc') {
-    sortedColumnData = sortStringAsc(dataForSort);
-  }
-  if (action.sortType === 'asc') {
-    sortedColumnData = sortDataAsc(dataForSort);
-  }
-  if (action.sortType === 'dsc') {
-    sortedColumnData = sortDataDsc(dataForSort);
-  }
-  console.log(sortedColumnData)
-  //update order
-  let updTableBody = []
-  sortedColumnData.forEach((item, index) => {
-    //we know, that arr sortedColumnData - return sorted list with label and
-    //with indexInCurrentData, so we can rewrite current global data array in another order
-    //one by one add row in correct oder to the new array
-    updTableBody[index] = state.tableBody[item.indexInCurrentData];
-  })
-
-  return updTableBody
-}
-
 const tableReducer = (state, action) => {
   if (action.type === 'SORT') {
-    const updatedTableHeaderData = sortTableHeaderFunction(state, action);
-    const updatedTableBodyData = sortTableBodyFunction(state, action);
+    const updatedTableColumnStructure =
+      toggleColumnFunction(state, action, 'col_sort', 'asc', 'dsc');
+
     //return updating array of elements
     return {
-      tableHeader: updatedTableHeaderData,
-      tableBody: updatedTableBodyData
-      // updArr
+      tableColumnStructure: updatedTableColumnStructure,
+      tableData: state.tableData
     };
   }
-  return defaultTableState;
+  if (action.type === 'VISIBLE') {
+    const updatedTableColumnStructure =
+      toggleColumnFunction(state, action, 'col_visible', true, false);
+    console.log(updatedTableColumnStructure)
+    return {
+      tableColumnStructure: updatedTableColumnStructure,
+      tableData: state.tableData
+    };
+  }
+    return defaultTableState;
 };
 
 const TableProvider = (props) => {
-  const [tableState, dispatchSortAction] = useReducer(
+  const [tableState, dispatchTableAction] = useReducer(
     tableReducer,
     defaultTableState
   );
 
   //function that update sort
   const sortItemInColum = (name, type, sort) => {
-    dispatchSortAction({type: 'SORT', name: name, elementType: type, sortType: sort});
+    dispatchTableAction({type: 'SORT', name: name, elementType: type, sortType: sort});
   };
+  const hideShowColumn = (name, visible) => {
+    dispatchTableAction({type: 'VISIBLE', name: name, visible: visible});
+  };
+  
 
   //our context that updated by event
   const tableContext = {
-    tableHeader: tableState.tableHeader,
-    tableBody: tableState.tableBody,
-    sortFunction: sortItemInColum,
-
+    tableColumnStructure: tableState.tableColumnStructure,
+    tableData: tableState.tableData,
+    sortColumnFunction: sortItemInColum,
+    hideShowColumnFunction: hideShowColumn,
   }
 
   return (

@@ -1,24 +1,25 @@
 import React, {useContext} from 'react';
-import tableContext from "../../store/table-context";
+import tableContext from "../../../store/table-context";
 
-const TableColumn = (props) => {
+const TableColumnHeader = (props) => {
   const tableCtx = useContext(tableContext);
-  const {headerRow, name, visible, label, type, width, sort} = props;
-  //use function from <TableProvider> to change the sort
 
+  const {name, visible, label, type, width, sort} = props;
+
+  //use function from <TableProvider> to change the sort
   const sortItemsHandler = () => {
     //use name - as identifier for column's element
-    tableCtx.sortFunction(name, type, sort);
+    tableCtx.sortColumnFunction(name, type, sort);
   }
 
   //column structure:
   const column = <td className='th_column' style={{width: `${width}%`}}>
     {label}
     {/*depend on sort type show button with top or bottom arrow for Header */}
-    {headerRow && sort === 'asc' &&
+    {sort === 'asc' &&
       <button onClick={sortItemsHandler}>&#8593; </button>
     }
-    {headerRow && sort === 'dsc' &&
+    {sort === 'dsc' &&
       <button onClick={sortItemsHandler}>&#8595; </button>
     }
   </td>;
@@ -30,4 +31,4 @@ const TableColumn = (props) => {
   );
 };
 
-export default TableColumn;
+export default TableColumnHeader;

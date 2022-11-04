@@ -1,7 +1,7 @@
 import React from 'react';
 //I changed {col_sort: 'asc'} to each element - for helping get the sort typ is it asc or dsc
 export const defaultTableState = {
-  tableHeader: [
+  tableColumnStructure: [
     {
       col_name: 'expand',
       col_visible: true,
@@ -11,7 +11,7 @@ export const defaultTableState = {
       col_sort: null,
     },
     {
-      col_name: 'skreenId',
+      col_name: 'screenId',
       col_visible: true,
       col_label: 'Screen',
       col_type: 'string',
@@ -20,7 +20,7 @@ export const defaultTableState = {
     },
     {
       col_name: 'locationId',
-      col_visible: true,
+      col_visible: false,
       col_label: 'Location',
       col_type: 'string',
       col_width: 20,
@@ -51,210 +51,36 @@ export const defaultTableState = {
       col_sort: 'asc',
     }
   ],
-  tableBody: [
-    [
-      {
-        col_name: 'expand',
-        col_visible: true,
-        col_label: '>',
-        col_type: 'symbol',
-        col_width: 5,
-        col_sort: null,
-      },
-      {
-        col_name: 'skreenId',
-        col_visible: true,
-        col_label: 'f9d78djd9j34',
-        col_type: 'string',
-        col_width: 25,
-        col_sort: null,
-      },
-      {
-        col_name: 'locationId',
-        col_visible: true,
-        col_label: 'USA',
-        col_type: 'string',
-        col_width: 20,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'schDate',
-        col_visible: true,
-        // col_label: new Date(year,month),
-        col_label: '2020-10-11',
-        col_type: 'date',
-        col_width: 15,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'showTime',
-        col_visible: true,
-        col_label: '17:03:12',
-        col_type: 'time',
-        col_width: 15,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'logStatus',
-        col_visible: true,
-        col_label: 'Play body',
-        col_type: 'string',
-        col_width: 20,
-        col_sort: 'asc',
-      }
-    ],
-    [
-      {
-        col_name: 'expand',
-        col_visible: true,
-        col_label: '>',
-        col_type: 'symbol',
-        col_width: 5,
-        col_sort: null,
-      },
-      {
-        col_name: 'skreenId',
-        col_visible: true,
-        col_label: '6yrurf9d78djd9j34',
-        col_type: 'string',
-        col_width: 25,
-        col_sort: null,
-      },
-      {
-        col_name: 'locationId',
-        col_visible: true,
-        col_label: 'Canada',
-        col_type: 'string',
-        col_width: 20,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'schDate',
-        col_visible: true,
-        // col_label: new Date("2022-03-25"),
-        col_label: '2023-03-17',
-        col_type: 'date',
-        col_width: 15,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'showTime',
-        col_visible: true,
-        col_label: '11:11:11',
-        col_type: 'time',
-        col_width: 15,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'logStatus',
-        col_visible: true,
-        col_label: 'Log Status body',
-        col_type: 'string',
-        col_width: 20,
-        col_sort: 'asc',
-      }
-    ],
-    [
-      {
-        col_name: 'expand',
-        col_visible: true,
-        col_label: '>',
-        col_type: 'symbol',
-        col_width: 5,
-        col_sort: null,
-      },
-      {
-        col_name: 'skreenId',
-        col_visible: true,
-        col_label: 'jd9j34f9d78d',
-        col_type: 'string',
-        col_width: 25,
-        col_sort: null,
-      },
-      {
-        col_name: 'locationId',
-        col_visible: true,
-        col_label: 'Ukraine',
-        col_type: 'string',
-        col_width: 20,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'schDate',
-        col_visible: true,
-        // col_label: new Date("2022-12-11"),
-        col_label: "2022-11-02",
-        col_type: 'date',
-        col_width: 15,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'showTime',
-        col_visible: true,
-        col_label: '15:20:15',
-        col_type: 'time',
-        col_width: 15,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'logStatus',
-        col_visible: true,
-        col_label: 'Status Log',
-        col_type: 'string',
-        col_width: 20,
-        col_sort: 'asc',
-      }
-    ],
-    [
-      {
-        col_name: 'expand',
-        col_visible: true,
-        col_label: '>',
-        col_type: 'symbol',
-        col_width: 5,
-        col_sort: null,
-      },
-      {
-        col_name: 'skreenId',
-        col_visible: true,
-        col_label: 'd9j34f9d',
-        col_type: 'string',
-        col_width: 25,
-        col_sort: null,
-      },
-      {
-        col_name: 'locationId',
-        col_visible: true,
-        col_label: 'India',
-        col_type: 'string',
-        col_width: 20,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'schDate',
-        col_visible: true,
-        // col_label: new Date("2023-04-22"),
-        col_label: "2023-04-22",
-        col_type: 'date',
-        col_width: 15,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'showTime',
-        col_visible: true,
-        col_label: '16:20:14',
-        col_type: 'time',
-        col_width: 15,
-        col_sort: 'asc',
-      },
-      {
-        col_name: 'logStatus',
-        col_visible: true,
-        col_label: 'Status Play',
-        col_type: 'string',
-        col_width: 20,
-        col_sort: 'asc',
-      }
-    ]
+  tableData: [
+    {
+      expand: false,
+      screenId: 'f9d78djd9j34',
+      screenName: 'Screen1',
+      locationId: 'DEL',
+      locationName: 'Delhi, India',
+      schDate: '2022-08-22',
+      showTime: '18:20',
+      logStatus: 'F'
+    },
+    {
+      expand: false,
+      screenId: 'k8fkd83dkf80',
+      screenName: 'Screen1',
+      locationId: 'CHN',
+      locationName: 'Chennai, India',
+      schDate: '2022-08-26',
+      showTime: '14:20',
+      logStatus: 'P'
+    },
+    {
+      screenId: 'test k8fkd83dkf80',
+      screenName: 'Screen1',
+      showTime: '14:20',
+      locationId: 'Test',
+      expand: false,
+      locationName: 'Test  India',
+      schDate: '2022-08-26',
+      logStatus: 'P'
+    },
   ]
 };
