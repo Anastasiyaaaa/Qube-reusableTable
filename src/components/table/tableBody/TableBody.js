@@ -1,12 +1,10 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import TableRow from "./TableRow";
-import tableContext from "../../../store/table-context";
 
-const TableBody = () => {
+const TableBody = (props) => {
   //here will be our main table data
-  const tableCtx = useContext(tableContext);
-  const tableColumnStructure = tableCtx.tableColumnStructure;
-  const tableData = tableCtx.tableData;
+  const tableColumnStructure = props.tableColumnStructure;
+  const tableData = props.tableData;
 
   //create new arr with labels from given DATA in order by our Structure data
   // and show label only if column in Structure is visible

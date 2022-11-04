@@ -14,6 +14,7 @@ const TableRowHeader = (props) => {
       sort={item.col_sort}
     />
   )
+
   return (
     <tr>
       {columns}

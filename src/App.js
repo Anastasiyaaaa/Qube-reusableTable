@@ -1,19 +1,31 @@
-import Table from "./components/table/Table";
+import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import TableProvider from "./store/TableProvider";
-import Header from "./components/Hader/Header";
+import Header from "./components/header/Header";
+import TableMainPage from "./pages/TableMain";
+import TableExtraPage from "./pages/TableExtra";
 
 function App() {
   return (
     //all component inside TableProvider has access to context
-    <TableProvider>
-      <header>
+    <BrowserRouter>
+      <TableProvider>
         <Header/>
-      </header>
-      <main>
-        <Table/>
-      </main>
+        <main>
+          <Switch>
+            <Route path='/' exact>
+              <Redirect to='/main-table'/>
+            </Route>
+          </Switch>
+          <Route path='/main-table' exact>
+            <TableMainPage/>
+          </Route>
+          <Route path='/extra-table' exact>
+            <TableExtraPage/>
+          </Route>
+        </main>
+      </TableProvider>
+    </BrowserRouter>
 
-    </TableProvider>
   );
 }
 

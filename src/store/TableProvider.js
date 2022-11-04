@@ -67,6 +67,8 @@ const TableProvider = (props) => {
   const tableContext = {
     tableColumnStructure: tableState.tableColumnStructure,
     tableData: tableState.tableData,
+    tableColumnStructureExtra: tableState.tableColumnStructureExtra,
+    tableDataExtra: tableState.tableDataExtra,
     sortColumnFunction: sortItemInColum,
     hideShowColumnFunction: hideShowColumn,
   }
