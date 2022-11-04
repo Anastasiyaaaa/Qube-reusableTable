@@ -1,5 +1,4 @@
-import React, {useContext} from 'react';
-import TableContext from "../../../store/table-context";
+import React  from 'react';
 import TableRowHeader from "./TableRowHeader";
 
 const TableHeader = (props) => {

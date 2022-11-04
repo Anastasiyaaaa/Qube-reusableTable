@@ -9,6 +9,7 @@ const TableColumnHeader = (props) => {
   //use function from <TableProvider> to change the sort
   const sortItemsHandler = () => {
     //use name - as identifier for column's element
+    console.log(name)
     tableCtx.sortColumnFunction(name, type, sort);
   }
 

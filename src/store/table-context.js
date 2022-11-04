@@ -2,10 +2,9 @@
 import React from 'react';
 
 const TableContext = React.createContext({
-    tableColumnStructure: [],
-    tableColumnStructureExtra: [],
-    tableData: [],
-    tableDataExtra: [],
+    currentPage: '',
+    mainPage: {},
+    updateCurrentPage: (page) => {},
     sortColumnFunction: (name, elementType, sortType) => {},
     hideShowColumnFunction: (name, visible) => {},
   }

@@ -11,38 +11,52 @@ import {defaultTableState} from "../api/data";
 
 
 const toggleColumnFunction = (state, action, column, case1, case2) => {
-  return state.tableColumnStructure.map(item => {
+  return state[state.currentPage].tableColumnStructure.map(item => {
     //get element that was clicked for updating sort type
     if (item.col_name === action.name) {
+      console.log('dfghjk')
       //change asc to dsc and vice versa
-      console.log(item[column])
       const newColumnValue = item[column] === case1 ? case2 : case1 ;
       console.log(newColumnValue)
       //return element with new sort type
-      return {...item, [column]: newColumnValue}
+      const upd = {...item, [column]: newColumnValue}
+      console.log(upd)
+      return upd
     }
     return item
-  })
+  });
 };
 
 const tableReducer = (state, action) => {
+  console.log(state.currentPage)
   if (action.type === 'SORT') {
     const updatedTableColumnStructure =
       toggleColumnFunction(state, action, 'col_sort', 'asc', 'dsc');
-
     //return updating array of elements
+
     return {
-      tableColumnStructure: updatedTableColumnStructure,
-      tableData: state.tableData
+      ...state,
+      [state.currentPage]: {
+        tableColumnStructure: updatedTableColumnStructure,
+        tableData: state[state.currentPage].tableData
+      },
     };
   }
   if (action.type === 'VISIBLE') {
     const updatedTableColumnStructure =
       toggleColumnFunction(state, action, 'col_visible', true, false);
-    console.log(updatedTableColumnStructure)
     return {
-      tableColumnStructure: updatedTableColumnStructure,
-      tableData: state.tableData
+      ...state,
+      [state.currentPage]: {
+        tableColumnStructure: updatedTableColumnStructure,
+        tableData: state[state.currentPage].tableData
+      },
+    };
+  }
+  if (action.type === 'UPDPAGE') {
+    return {
+      ...state,
+      currentPage: action.page,
     };
   }
     return defaultTableState;
@@ -61,14 +75,16 @@ const TableProvider = (props) => {
   const hideShowColumn = (name, visible) => {
     dispatchTableAction({type: 'VISIBLE', name: name, visible: visible});
   };
-  
+  const updateCurrentPage = (page) => {
+    dispatchTableAction({type: 'UPDPAGE', page: page});
+  };
 
   //our context that updated by event
   const tableContext = {
-    tableColumnStructure: tableState.tableColumnStructure,
-    tableData: tableState.tableData,
-    tableColumnStructureExtra: tableState.tableColumnStructureExtra,
-    tableDataExtra: tableState.tableDataExtra,
+    currentPage: tableState.currentPage,
+    mainPage: tableState.mainPage,
+    extraPage: tableState.extraPage,
+    updateCurrentPage: updateCurrentPage,
     sortColumnFunction: sortItemInColum,
     hideShowColumnFunction: hideShowColumn,
   }

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import TableContext from "../store/table-context";
 import TableHeader from "../components/table/tableHeader/TableHeader";
 import TableBody from "../components/table/tableBody/TableBody";
@@ -7,12 +7,17 @@ import './Table.css';
 const TableMain = () => {
   //simple table with TableHeader and TableBody
   const tableCtx = useContext(TableContext);
-  const tableColumnStructure = tableCtx.tableColumnStructure;
-  const tableData = tableCtx.tableData;
+  console.log(tableCtx)
+  const tableColumnStructure = tableCtx.mainPage.tableColumnStructure;
+  const tableData = tableCtx.mainPage.tableData;
+
+  useEffect(() => {
+    tableCtx.updateCurrentPage('mainPage');
+  }, [])
 
   return (
     <table className='table'>
-      <TableHeader tableColumnStructure={tableColumnStructure}/>
+      <TableHeader page='mainPage' tableColumnStructure={tableColumnStructure}/>
       <TableBody tableColumnStructure={tableColumnStructure} tableData={tableData}/>
     </table>
   );
