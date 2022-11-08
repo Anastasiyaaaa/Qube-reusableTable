@@ -14,21 +14,16 @@ const toggleColumnFunction = (state, action, column, case1, case2) => {
   return state[state.currentPage].tableColumnStructure.map(item => {
     //get element that was clicked for updating sort type
     if (item.col_name === action.name) {
-      console.log('dfghjk')
       //change asc to dsc and vice versa
       const newColumnValue = item[column] === case1 ? case2 : case1 ;
-      console.log(newColumnValue)
       //return element with new sort type
-      const upd = {...item, [column]: newColumnValue}
-      console.log(upd)
-      return upd
+      return {...item, [column]: newColumnValue}
     }
     return item
   });
 };
 
 const tableReducer = (state, action) => {
-  console.log(state.currentPage)
   if (action.type === 'SORT') {
     const updatedTableColumnStructure =
       toggleColumnFunction(state, action, 'col_sort', 'asc', 'dsc');
