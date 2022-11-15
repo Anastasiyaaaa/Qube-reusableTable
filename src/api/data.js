@@ -1,5 +1,14 @@
 //I changed {col_sort: 'asc'} to each element - for helping get the sort typ is it asc or dsc
 export const defaultTableState = {
+  defaultValue:{
+    expand: 'expand',
+    screenId: 'screenId',
+    schDate: 'schDate',
+    showTime: 'showTime',
+    logStatus: 'logStatus',
+    locationCurrent: 'locationCurrent',
+    realTime: 'realTime',
+  },
   currentPage: 'mainPage',
   mainPage : {
     tableColumnStructure: [
@@ -70,7 +79,6 @@ export const defaultTableState = {
         locationId: 'CHN',
         locationName: 'Chennai, India',
         schDate: '2022-08-26',
-        showTime: '14:20',
         logStatus: 'P'
       },
       {
@@ -117,7 +125,6 @@ export const defaultTableState = {
         testExpand: false,
         screenId: 'f9d78djd9j34 Extra',
         screenName: 'Screen1',
-        locationCurrent: 'DEL',
         locationName: 'Delhi, India',
         realTime: '18:20'
       },

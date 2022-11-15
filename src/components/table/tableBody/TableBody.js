@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import TableRow from "./TableRow";
+import TableContext from "../../../store/table-context";
 
 const TableBody = (props) => {
   //here will be our main table data
+  const tableCtx = useContext(TableContext);
+  const defaultValue = tableCtx.defaultValue;
+
   const tableColumnStructure = props.tableColumnStructure;
   const tableData = props.tableData;
 
@@ -15,6 +19,10 @@ const TableBody = (props) => {
       if (`${colName}` in tableDataItem){
         if(columnStructure.col_visible === true){
           rowDataList.push(tableDataItem[colName]);
+        }
+      }else {
+        if(columnStructure.col_visible === true){
+          rowDataList.push(defaultValue[colName]);
         }
       }
     });

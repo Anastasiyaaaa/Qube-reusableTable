@@ -3,6 +3,7 @@ import React from 'react';
 
 const TableContext = React.createContext({
     currentPage: '',
+    defaultValue: {},
     mainPage: {},
     extraPage: {},
     updateCurrentPage: (page) => {},

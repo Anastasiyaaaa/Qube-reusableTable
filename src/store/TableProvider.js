@@ -76,6 +76,7 @@ const TableProvider = (props) => {
 
   //our context that updated by event
   const tableContext = {
+    defaultValue: tableState.defaultValue,
     currentPage: tableState.currentPage,
     mainPage: tableState.mainPage,
     extraPage: tableState.extraPage,
