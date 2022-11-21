@@ -4,8 +4,10 @@ import React from 'react';
 const TableContext = React.createContext({
     currentPage: '',
     defaultValue: {},
-    mainPage: {},
-    extraPage: {},
+    ordersPage: {},
+    schedulesPage: {},
+    screensPage: {},
+    showPage: {},
     updateCurrentPage: (page) => {},
     sortColumnFunction: (name, elementType, sortType) => {},
     hideShowColumnFunction: (name, visible) => {},

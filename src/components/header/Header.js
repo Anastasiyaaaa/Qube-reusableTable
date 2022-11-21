@@ -13,8 +13,10 @@ const Header = () => {
   return (
     <header>
       <div className='nav'>
-        <NavLink to='/main-table'> GO to main table</NavLink>
-        <NavLink to='/extra-table'> GO to extra table</NavLink>
+        <NavLink to='/orders-page'> Orders page</NavLink>
+        <NavLink to='/schedules-page'> Schedules page</NavLink>
+        <NavLink to='/orders-page'> Screens page</NavLink>
+        <NavLink to='/shows-page'> Shows page</NavLink>
       </div>
       <div>
         {/*add button for check hide/show column*/}

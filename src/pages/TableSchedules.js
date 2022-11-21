@@ -1,16 +1,17 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
 import TableContext from "../store/table-context";
 import Table from "../components/table/Table";
 
-const TableMain = () => {
+const TableSchedules = () => {
   //simple table with TableHeader and TableBody
   const tableCtx = useContext(TableContext);
-  const tableColumnStructure = tableCtx.mainPage.tableColumnStructure;
-  const tableData = tableCtx.mainPage.tableData;
+  const tableColumnStructure = tableCtx.schedulesPage.tableColumnStructure;
+  const tableData = tableCtx.schedulesPage.tableData;
 
   useEffect(() => {
-    tableCtx.updateCurrentPage('mainPage');
+    tableCtx.updateCurrentPage('schedulesPage');
   }, [])
+
 
   return (
     <Table
@@ -20,4 +21,4 @@ const TableMain = () => {
   );
 };
 
-export default TableMain;
+export default TableSchedules;

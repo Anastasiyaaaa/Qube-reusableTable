@@ -78,8 +78,10 @@ const TableProvider = (props) => {
   const tableContext = {
     defaultValue: tableState.defaultValue,
     currentPage: tableState.currentPage,
-    mainPage: tableState.mainPage,
-    extraPage: tableState.extraPage,
+    ordersPage: tableState.ordersPage,
+    schedulesPage: tableState.schedulesPage,
+    screensPage: tableState.screensPage,
+    showPage: tableState.showPage,
     updateCurrentPage: updateCurrentPage,
     sortColumnFunction: sortItemInColum,
     hideShowColumnFunction: hideShowColumn,

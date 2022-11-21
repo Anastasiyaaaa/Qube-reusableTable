@@ -1,17 +1,16 @@
-import React, {useEffect, useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import TableContext from "../store/table-context";
 import Table from "../components/table/Table";
 
-const TableExtraPage = () => {
+const TableShows = () => {
   //simple table with TableHeader and TableBody
   const tableCtx = useContext(TableContext);
-  const tableColumnStructure = tableCtx.extraPage.tableColumnStructure;
-  const tableData = tableCtx.extraPage.tableData;
+  const tableColumnStructure = tableCtx.showPage.tableColumnStructure;
+  const tableData = tableCtx.showPage.tableData;
 
   useEffect(() => {
-    tableCtx.updateCurrentPage('extraPage');
+    tableCtx.updateCurrentPage('showPage');
   }, [])
-
 
   return (
     <Table
@@ -21,4 +20,4 @@ const TableExtraPage = () => {
   );
 };
 
-export default TableExtraPage;
+export default TableShows;

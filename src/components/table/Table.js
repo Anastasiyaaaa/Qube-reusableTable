@@ -6,10 +6,12 @@ import './Table.css'
 
 const Table = (props) => {
   return (
-    <table className='table'>
-      <TableHeader tableColumnStructure={props.tableColumnStructure}/>
-      <TableBody tableColumnStructure={props.tableColumnStructure} tableData={props.tableData}/>
-    </table>
+    <div className='table-wrapper'>
+      <table className='table'>
+        <TableHeader tableColumnStructure={props.tableColumnStructure}/>
+        <TableBody tableColumnStructure={props.tableColumnStructure} tableData={props.tableData}/>
+      </table>
+    </div>
   );
 };
 

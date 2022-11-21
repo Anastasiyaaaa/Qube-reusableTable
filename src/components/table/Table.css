@@ -1,3 +1,6 @@
+.table-wrapper{
+    overflow-x: scroll;
+}
 .table {
     width: 100%;
     margin-bottom: 20px;
@@ -6,10 +9,13 @@
 }
 
 .table .th_column {
+    min-width: 150px;
+    text-align: center;
     font-weight: bold;
-    padding: 5px;
+    word-wrap: break-word;
     background: #efefef;
     border: 1px solid #dddddd;
+    padding: 5px;
 }
 
 .table .th_column button.active {
