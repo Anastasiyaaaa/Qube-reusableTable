@@ -15,7 +15,7 @@ const TableColumnHeader = (props) => {
   //column structure:
   const column = <td className='th_column' style={{width: `${width}%`, minWidth: `${minWidth}px`}}>
     {label}
-    {/*depend on sort type show button with top or bottom arrow for Header */}
+    {/*depend on sort type show button with top or bottom arrow for Header
     <br/>
     {sort === 'asc' &&
       <button onClick={sortItemsHandler}>&#8593; </button>
@@ -23,6 +23,7 @@ const TableColumnHeader = (props) => {
     {sort === 'dsc' &&
       <button onClick={sortItemsHandler}>&#8595; </button>
     }
+    */}
   </td>;
 
   return (
