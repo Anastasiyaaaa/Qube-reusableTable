@@ -136,7 +136,7 @@ export const defaultTableState = {
     ],
     tableData: [
       {
-        expand: false,
+        expand: 1,
         orderId: 'QCS/006535/21-23',
         govtRoNo: 'XX-YY-ZZ',
         noOfSchedules: '2',
@@ -149,7 +149,7 @@ export const defaultTableState = {
         spotsPlayedPercent: '22.22'
       },
       {
-        expand: false,
+        expand: 1,
         orderId: 'QCS/006535/21-22',
         govtRoNo: 'AA-BB-CC-41',
         noOfSchedules: '2',
@@ -166,7 +166,7 @@ export const defaultTableState = {
       {
         col_name: 'expand',
         col_visible: true,
-        col_label: '',
+        col_label: '>',
         col_type: 'symbol',
         col_value: '>',
         col_subValue: null,
@@ -202,7 +202,7 @@ export const defaultTableState = {
         col_label: 'Taken Count',
         col_type: 'string',
         col_value: ['fnTakenCountValue', 'totalTaken'],
-        col_subValue: '',
+        col_subValue: ['fnNotTakenCountValue', 'totalNotTaken'],
         col_width: 15,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -213,7 +213,7 @@ export const defaultTableState = {
         col_label: 'Played Count',
         col_type: 'string',
         col_value: ['fnPlayedCountValue', 'totalPlayed'],
-        col_subValue: '',
+        col_subValue: ['fnNotPlayedCountValue','totalNotPlayed'],
         col_width: 15,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -224,7 +224,7 @@ export const defaultTableState = {
         col_label: 'Spots Max',
         col_type: 'string',
         col_value: ['fnSpotsMaxValue', 'spotsMaximum'],
-        col_subValue: '',
+        col_subValue: ['fnSpotsScheduledValue','spotsScheduled'],
         col_width: 20,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -235,7 +235,7 @@ export const defaultTableState = {
         col_label: 'Spots Mov',
         col_type: 'string',
         col_value: ['fnSpotsMovValue', 'spotsPossible'],
-        col_subValue: '',
+        col_subValue: ['fnSpotsPlayedValue','spotsPlayed'],
         col_width: 20,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -276,25 +276,33 @@ export const defaultTableState = {
     ],
     tableData: [
       {
-        expand: false,
+        expand: 1,
         schedule: 'CMRShopMSI012011027ENAP22',
         noOfScreens: '3',
         totalTaken: '2',
+        totalNotTaken: '2',
         totalPlayed: '1',
+        totalNotPlayed: '2',
         spotsMaximum: '22',
+        spotsScheduled: '18',
         spotsPossible: '63',
+        spotsPlayed: '63',
         takenPercent: '33.33',
         playedPercent: '33.33',
         spotsPlayedPercent: '39.68'
       },
       {
-        expand: false,
+        expand: 1,
         schedule: 'CMRShopMSI012011027ENAP22',
         noOfScreens: '3',
         totalTaken: '2',
+        totalNotTaken: '2',
         totalPlayed: '1',
+        totalNotPlayed: '2',
         spotsMaximum: '22',
+        spotsScheduled: '18',
         spotsPossible: '63',
+        spotsPlayed: '63',
         takenPercent: '33.33',
         playedPercent: '33.33',
         spotsPlayedPercent: '39.68'
@@ -415,7 +423,7 @@ export const defaultTableState = {
     ],
     tableData: [
       {
-        expand: false,
+        expand: 1,
         screen: 'Wave Cinema S1, Moradabad',
         scheduleStatus: 'Taken',
         playLogStatus: 'Pending',
@@ -426,7 +434,7 @@ export const defaultTableState = {
         spotsPlayedPercent: '50'
       },
       {
-        expand: false,
+        expand: 1,
         screen: 'Wave Cinema S2, Moradabad',
         scheduleStatus: 'Taken',
         playLogStatus: 'Pending',
