@@ -1,6 +1,6 @@
 //I changed {col_minWidth: 150, col_sort: 'asc'} to each element - for helping get the sort typ is it asc or dsc
 export const defaultTableState = {
-  defaultValue: {
+  defaultValue: {                       // UR: UR: No default
     expand: 'expand',
     screenId: 'screenId',
     schDate: 'schDate',
@@ -11,11 +11,11 @@ export const defaultTableState = {
   },
   currentPage: 'ordersPage',
   ordersPage: {
-    tableColumnStructure: [
+    tableColumnStructure: [             // UR: Total Width% is greater than 100
       {
         col_name: 'expand',
         col_visible: true,
-        col_label: '',
+        col_label: '',                  // UR: will have label '>'
         col_type: 'symbol',
         col_value: '>',
         col_subValue: null,
@@ -26,7 +26,7 @@ export const defaultTableState = {
       {
         col_name: 'orderId',
         col_visible: true,
-        col_label: 'Screen',
+        col_label: 'Screen',            // UR: Order ID
         col_type: 'string',
         col_value: ['fnStringValue', 'orderId'],
         col_subValue: null,
@@ -48,7 +48,7 @@ export const defaultTableState = {
       {
         col_name: 'noOfSchedules',
         col_visible: true,
-        col_label: 'Schedule Count',
+        col_label: 'Schedule Count',    // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumIntValue', 'noOfSchedules'],
         col_subValue: null,
@@ -59,7 +59,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsMaximum',
         col_visible: true,
-        col_label: 'Spots Maximum',
+        col_label: 'Spots Maximum',     // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnSpotsMaxValue', 'spotsMaximum'],
         col_subValue: null,
@@ -70,7 +70,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsScheduled',
         col_visible: true,
-        col_label: 'Spots Scheduled',
+        col_label: 'Spots Scheduled',   // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumIntValue', 'spotsScheduled'],
         col_subValue: null,
@@ -81,7 +81,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPossible',
         col_visible: true,
-        col_label: 'Spots Movies',
+        col_label: 'Spots Movies',      // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnSpotsMovValue', 'spotsPossible'],
         col_subValue: null,
@@ -103,7 +103,7 @@ export const defaultTableState = {
       {
         col_name: 'takenPercent',
         col_visible: true,
-        col_label: 'Taken Percent',
+        col_label: 'Taken Percent',     // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'takenPercent'],
         col_subValue: null,
@@ -114,7 +114,7 @@ export const defaultTableState = {
       {
         col_name: 'playedPercent',
         col_visible: true,
-        col_label: 'Played Percent',
+        col_label: 'Played Percent',    // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'playedPercent'],
         col_subValue: null,
@@ -125,7 +125,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayedPercent',
         col_visible: true,
-        col_label: 'Spots Percent',
+        col_label: 'Spots Percent',     // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'spotsPlayedPercent'],
         col_subValue: null,
@@ -162,11 +162,11 @@ export const defaultTableState = {
     ],
   },
   schedulesPage: {
-    tableColumnStructure: [
+    tableColumnStructure: [             // UR: Total Width% is greater than 100
       {
         col_name: 'expand',
         col_visible: true,
-        col_label: '',
+        col_label: '',                  // UR: will have label '>'
         col_type: 'symbol',
         col_value: '>',
         col_subValue: null,
@@ -177,10 +177,10 @@ export const defaultTableState = {
       {
         col_name: 'schedule',
         col_visible: true,
-        col_label: 'Screen',
+        col_label: 'Screen',            // UR: Schedule Name
         col_type: 'string',
         col_value: ['fnStringValue', 'schedule'],
-        col_subValue: null,
+        col_subValue: null,             // UR: will have sub-value
         col_width: 25,
         col_minWidth: 150,
         col_sort: null,
@@ -188,7 +188,7 @@ export const defaultTableState = {
       {
         col_name: 'noOfScreens',
         col_visible: true,
-        col_label: 'Screen Count',
+        col_label: 'Screen Count',      // UR: must include \n for LF    
         col_type: 'string',
         col_value: ['fnStringValue', 'noOfScreens'],
         col_subValue: null,
@@ -199,10 +199,10 @@ export const defaultTableState = {
       {
         col_name: 'totalTaken',
         col_visible: true,
-        col_label: 'Taken Count',
+        col_label: 'Taken Count',       // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnTakenCountValue', 'totalTaken'],
-        col_subValue: '',
+        col_subValue: '',               // UR: will have sub-value
         col_width: 15,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -210,10 +210,10 @@ export const defaultTableState = {
       {
         col_name: 'totalPlayed',
         col_visible: true,
-        col_label: 'Played Count',
+        col_label: 'Played Count',      // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnPlayedCountValue', 'totalPlayed'],
-        col_subValue: '',
+        col_subValue: '',               // UR: will have sub-value
         col_width: 15,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -221,10 +221,10 @@ export const defaultTableState = {
       {
         col_name: 'spotsMaximum',
         col_visible: true,
-        col_label: 'Spots Max',
+        col_label: 'Spots Max',         // UR: must include \n for LF -- Spots Max/Sch.
         col_type: 'string',
         col_value: ['fnSpotsMaxValue', 'spotsMaximum'],
-        col_subValue: '',
+        col_subValue: '',               // UR: will have sub-value
         col_width: 20,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -232,10 +232,10 @@ export const defaultTableState = {
       {
         col_name: 'spotsPossible',
         col_visible: true,
-        col_label: 'Spots Mov',
+        col_label: 'Spots Mov',         // UR: must include \n for LF  -- Spots Mov./Play
         col_type: 'string',
         col_value: ['fnSpotsMovValue', 'spotsPossible'],
-        col_subValue: '',
+        col_subValue: '',               // UR: will have sub-value
         col_width: 20,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -243,7 +243,7 @@ export const defaultTableState = {
       {
         col_name: 'takenPercent',
         col_visible: true,
-        col_label: 'Taken Percent',
+        col_label: 'Taken Percent',     // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'takenPercent'],
         col_subValue: null,
@@ -254,7 +254,7 @@ export const defaultTableState = {
       {
         col_name: 'playedPercent',
         col_visible: true,
-        col_label: 'Played Percent',
+        col_label: 'Played Percent',    // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'playedPercent'],
         col_subValue: null,
@@ -265,7 +265,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayedPercent',
         col_visible: true,
-        col_label: 'Spots Percent',
+        col_label: 'Spots Percent',     // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'spotsPlayedPercent'],
         col_subValue: null,
@@ -301,11 +301,11 @@ export const defaultTableState = {
       },],
   },
   screensPage: {
-    tableColumnStructure: [
+    tableColumnStructure: [             // UR: Total Width% is greater than 100
       {
         col_name: 'expand',
         col_visible: true,
-        col_label: '',
+        col_label: '',                  // UR: will have label '>'
         col_type: 'symbol',
         col_value: '>',
         col_subValue: null,
@@ -319,7 +319,7 @@ export const defaultTableState = {
         col_label: 'Screen Name',
         col_type: 'string',
         col_value: ['fnStringValue', 'screen'],
-        col_subValue: '',
+        col_subValue: '',               // UR: will have sub-value
         col_width: 25,
         col_minWidth: 150,
         col_sort: null,
@@ -327,10 +327,10 @@ export const defaultTableState = {
       {
         col_name: 'scheduleStatus',
         col_visible: true,
-        col_label: 'Schedule vStatus',
+        col_label: 'Schedule vStatus',  // UR: spelling!! -- must include \n for LF
         col_type: 'string',
         col_value: ['fnStringValue', 'scheduleStatus'],
-        col_subValue: '',
+        col_subValue: '',               // UR: will have sub-value
         col_width: 20,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -338,10 +338,10 @@ export const defaultTableState = {
       {
         col_name: 'playLogStatus',
         col_visible: true,
-        col_label: 'Playlog Status',
+        col_label: 'Playlog Status',    // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnStringValue', 'playLogStatus'],
-        col_subValue: '',
+        col_subValue: '',               // UR: will have sub-value
         col_width: 15,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -349,7 +349,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsMaximum',
         col_visible: true,
-        col_label: 'Spots vMaximum',
+        col_label: 'Spots vMaximum',    // UR: spelling!! -- must include \n for LF
         col_type: 'string',
         col_value: ['fnSpotsMaxValue', 'spotsMaximum'],
         col_subValue: null,
@@ -360,7 +360,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsScheduled',
         col_visible: true,
-        col_label: 'Spots vScheduled',
+        col_label: 'Spots vScheduled',  // spelling!! -- must include \n for LF
         col_type: 'string',
         col_value: ['fnNumIntValue', 'spotsScheduled'],
         col_subValue: null,
@@ -371,7 +371,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPossible',
         col_visible: true,
-        col_label: 'Spots vMovies',
+        col_label: 'Spots vMovies',     // UR: spelling!! -- must include \n for LF
         col_type: 'string',
         col_value: ['fnSpotsMovValue', 'spotsPossible'],
         col_subValue: null,
@@ -380,7 +380,7 @@ export const defaultTableState = {
         col_sort: 'asc',
       },
       {
-        col_name: 'takenPercent',
+        col_name: 'takenPercent',       // UR: no such field!!!
         col_visible: true,
         col_label: 'Taken Percent',
         col_type: 'string',
@@ -393,7 +393,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayed',
         col_visible: true,
-        col_label: 'Spots vPlayed',
+        col_label: 'Spots vPlayed',     // UR: spelling!! -- must include \n for LF
         col_type: 'string',
         col_value: ['fnStringValue', 'spotsPlayed'],
         col_subValue: null,
@@ -404,7 +404,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayedPercent',
         col_visible: true,
-        col_label: 'Spots Percent',
+        col_label: 'Spots Percent',     // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'spotsPlayedPercent'],
         col_subValue: null,
@@ -439,7 +439,7 @@ export const defaultTableState = {
     ],
   },
   showPage: {
-    tableColumnStructure: [
+    tableColumnStructure: [             // UR: Total Width% is greater than 100 
       {
         col_name: 'showDate',
         col_visible: true,
@@ -456,7 +456,7 @@ export const defaultTableState = {
         col_visible: true,
         col_label: 'Time',
         col_type: 'string',
-        col_value: ['fnStringValue', 'startTime'],
+        col_value: ['fnStringValue', 'startTime'],  // UR: will need endTime too
         col_subValue: null,
         col_width: 20,
         col_minWidth: 100,
@@ -476,7 +476,7 @@ export const defaultTableState = {
       {
         col_name: 'prefPosition',
         col_visible: true,
-        col_label: 'Pref Position',
+        col_label: 'Pref Position',     // UR: Pref. -- must include \n for LF
         col_type: 'string',
         col_value: ['fnStringValue', 'prefPosition'],
         col_subValue: null,
@@ -487,7 +487,7 @@ export const defaultTableState = {
       {
         col_name: 'moviesPlayed',
         col_visible: true,
-        col_label: 'Movie Played',
+        col_label: 'Movie Played',      // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnStringValue', 'moviesPlayed'],
         col_subValue: null,
@@ -509,7 +509,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsScheduled',
         col_visible: true,
-        col_label: 'Spots Scheduled',
+        col_label: 'Spots Scheduled',   // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumIntValue', 'spotsScheduled'],
         col_subValue: null,
@@ -520,7 +520,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayed',
         col_visible: true,
-        col_label: 'Spots Played',
+        col_label: 'Spots Played',      // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnStringValue', 'spotsPlayed'],
         col_subValue: null,
@@ -531,7 +531,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayedPercent',
         col_visible: true,
-        col_label: 'Spots Percent',
+        col_label: 'Spots Percent',     // UR: must include \n for LF
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'spotsPlayedPercent'],
         col_subValue: null,
