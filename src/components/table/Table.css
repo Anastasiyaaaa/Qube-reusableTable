@@ -9,7 +9,6 @@
 }
 
 .table .th_column {
-    min-width: 150px;
     text-align: center;
     font-weight: bold;
     word-wrap: break-word;

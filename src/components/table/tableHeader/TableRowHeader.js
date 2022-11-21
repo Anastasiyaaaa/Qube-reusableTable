@@ -11,6 +11,7 @@ const TableRowHeader = (props) => {
       label={item.col_label}
       type={item.col_type}
       width={item.col_width}
+      minWidth={item.col_minWidth}
       sort={item.col_sort}
     />
   )
