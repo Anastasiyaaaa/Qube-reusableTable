@@ -20,16 +20,16 @@ const TableBody = (props) => {
 //check all variant of value that we can get from db
       if (columnStructure.col_visible){
         if (Array.isArray(dataColValue) && Array.isArray(dataColSubValue)) {
-          const valueCell = getValueFunction(dataColValue[0], dataColValue[1], tableDataItem);
-          const subValueCell =  getValueFunction(dataColSubValue[0], dataColSubValue[1], tableDataItem);
+          const valueCell = getValueFunction(dataColValue, tableDataItem);
+          const subValueCell =  getValueFunction(dataColSubValue, tableDataItem);
           return totalCellValue.push([valueCell,subValueCell]);
         }
         if (Array.isArray(dataColValue) && !Array.isArray(dataColSubValue)) {
-          const valueCell = getValueFunction(dataColValue[0], dataColValue[1], tableDataItem);
+          const valueCell = getValueFunction(dataColValue, tableDataItem);
           return totalCellValue.push(valueCell);
         }
         if (Array.isArray(dataColSubValue) && !Array.isArray(dataColValue)) {
-          const subValueCell = getValueFunction(dataColSubValue[0], dataColSubValue[1], tableDataItem);
+          const subValueCell = getValueFunction(dataColSubValue, tableDataItem);
           return totalCellValue.push(subValueCell);
         }
 

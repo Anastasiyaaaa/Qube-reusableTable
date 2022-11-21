@@ -79,7 +79,47 @@ function fnNotTakenCountValue(value1, dataObj) {
   }
 }
 
-const getValueFunction = function (functionName, value1, dataObj) {
+function fnTimeValue(value1, value2, dataObj) {
+  let totalValue = ''
+  if (`${value1}` in dataObj) {
+
+    totalValue +=` ${dataObj[value1]} `
+  }else {
+    totalValue += '';
+  }
+  if (`${value2}` in dataObj) {
+    totalValue +=`- ${dataObj[value2]} `
+  }else {
+    totalValue += '';
+  }
+  return totalValue;
+}
+function fnLastPlayedOn(value1, dataObj) {
+  if (`${value1}` in dataObj) {
+    return dataObj[value1]
+  } else {
+    return ' '
+  }
+}
+function fnTakenOn(value1, dataObj) {
+  if (`${value1}` in dataObj) {
+    return dataObj[value1]
+  } else {
+    return ' '
+  }
+}
+function fnScreenCodeValue(value1, dataObj) {
+  if (`${value1}` in dataObj) {
+    return `Code: ${dataObj[value1]}`
+  } else {
+    return ' '
+  }
+}
+
+const getValueFunction = function (data,  dataObj) {
+  const functionName = data[0];
+  const value1 = data[1];
+
   let value;
   switch (functionName) {
     case 'fnStringValue':
@@ -114,6 +154,18 @@ const getValueFunction = function (functionName, value1, dataObj) {
       break;
     case 'fnSpotsPlayedValue':
       value = fnSpotsPlayedValue(value1, dataObj);
+      break;
+    case 'fnTimeValue':
+      value = fnTimeValue(value1, data[2], dataObj);
+      break;
+    case 'fnLastPlayedOn':
+      value = fnLastPlayedOn(value1, dataObj);
+      break;
+    case 'fnTakenOn':
+      value = fnTakenOn(value1, dataObj);
+      break;
+    case 'fnScreenCodeValue':
+      value = fnScreenCodeValue(value1, dataObj);
       break;
   }
 
