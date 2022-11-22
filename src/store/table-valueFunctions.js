@@ -1,174 +1,273 @@
-
-function fnNumIntValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return dataObj[value1]
-  } else {
-    return ' '
-  }
-}
-function fnNumNotIntValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return dataObj[value1]
-  } else {
-    return ' '
-  }
-}
-function fnSpotsMaxValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return `Max: ${dataObj[value1]}`
-  } else {
-    return ' '
-  }
-}
-function fnTakenCountValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return `Taken: ${dataObj[value1]}`
-  } else {
-    return ' '
-  }
+function fnNumIntValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = dataObj[value]
+    } else {
+      result = ' '
+    }
+  })
+  return result;
 }
 
-function fnStringValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return dataObj[value1]
-  } else {
-    return ' '
-  }
+function fnNumNotIntValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = dataObj[value]
+    } else {
+      result = ' '
+    }
+  })
+  return result;
 }
 
-function fnSpotsMovValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return `Movies: ${dataObj[value1]}`
-  } else {
-    return ' '
-  }
-}
-function fnPlayedCountValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return `Played: ${dataObj[value1]}`
-  } else {
-    return ' '
-  }
-}
-function fnSpotsPlayedValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return `Played: ${dataObj[value1]}`
-  } else {
-    return ' '
-  }
-}
-function fnSpotsScheduledValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return `Sch: ${dataObj[value1]}`
-  } else {
-    return ' '
-  }
-}
-function fnNotPlayedCountValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return `Not Played: ${dataObj[value1]}`
-  } else {
-    return ' '
-  }
-}
-function fnNotTakenCountValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return `Not Taken: ${dataObj[value1]}`
-  } else {
-    return ' '
-  }
+function fnSpotsMaxValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = `Max: ${dataObj[value]}`
+    } else {
+      result = ' '
+    }
+  })
+  return result;
 }
 
-function fnTimeValue(value1, value2, dataObj) {
-  let totalValue = ''
-  if (`${value1}` in dataObj) {
-
-    totalValue +=` ${dataObj[value1]} `
-  }else {
-    totalValue += '';
-  }
-  if (`${value2}` in dataObj) {
-    totalValue +=`- ${dataObj[value2]} `
-  }else {
-    totalValue += '';
-  }
-  return totalValue;
-}
-function fnLastPlayedOn(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return dataObj[value1]
-  } else {
-    return ' '
-  }
-}
-function fnTakenOn(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return dataObj[value1]
-  } else {
-    return ' '
-  }
-}
-function fnScreenCodeValue(value1, dataObj) {
-  if (`${value1}` in dataObj) {
-    return `Code: ${dataObj[value1]}`
-  } else {
-    return ' '
-  }
+function fnTakenCountValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = `Taken: ${dataObj[value]}`
+    } else {
+      result = ' '
+    }
+  })
+  return result;
 }
 
-const getValueFunction = function (data,  dataObj) {
-  const functionName = data[0];
-  const value1 = data[1];
+function fnStringValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = dataObj[value]
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+}
 
+function fnSpotsMovValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = `Movies: ${dataObj[value]}`
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+}
+
+function fnPlayedCountValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = `Played: ${dataObj[value]}`
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+}
+
+function fnSpotsPlayedValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = `Played: ${dataObj[value]}`
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+}
+
+function fnSpotsScheduledValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = `Sch ${dataObj[value]}`
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+}
+
+function fnNotPlayedCountValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = `Not Played ${dataObj[value]}`
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+}
+
+function fnNotTakenCountValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = `Not Taken: ${dataObj[value]}`
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+}
+
+function fnTimeValue(arg, dataObj) {
+  let result;
+  arg.forEach((value, i) => {
+    if (`${value}` in dataObj) {
+      result += `${dataObj[value]}`
+    } else {
+      result = ' '
+    }
+    if (i === 1) {
+      result += ` - `
+    }
+  })
+  return result;
+}
+
+function fnLastPlayedOn(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = dataObj[value]
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+}
+
+function fnTakenOn(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = dataObj[value]
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+}
+
+function fnScreenCodeValue(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      result = `Code: ${dataObj[value]}`
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+}
+
+function fnExpand(arg, dataObj) {
+  let result;
+  arg.forEach((value) => {
+    if (`${value}` in dataObj) {
+      if (dataObj[value] === 0) {
+        result = `>`
+      } else {
+        result = '⋁'
+      }
+    } else {
+      result = ' '
+    }
+  })
+  return result;
+
+}
+
+const getValueFunction = function (colValue, dataObj) {
   let value;
-  switch (functionName) {
-    case 'fnStringValue':
-      value = fnStringValue(value1, dataObj);
-      break;
-    case 'fnNumIntValue':
-      value = fnNumIntValue(value1, dataObj);
-      break;
-    case 'fnSpotsMaxValue':
-      value = fnSpotsMaxValue(value1, dataObj);
-      break;
-    case 'fnSpotsMovValue':
-      value = fnSpotsMovValue(value1, dataObj);
-      break;
-    case 'fnNumNotIntValue':
-      value = fnNumNotIntValue(value1, dataObj);
-      break;
-    case 'fnTakenCountValue':
-      value = fnTakenCountValue(value1, dataObj);
-      break;
-    case 'fnPlayedCountValue':
-      value = fnPlayedCountValue(value1, dataObj);
-      break;
-    case 'fnNotTakenCountValue':
-      value = fnNotTakenCountValue(value1, dataObj);
-      break;
-    case 'fnNotPlayedCountValue':
-      value = fnNotPlayedCountValue(value1, dataObj);
-      break;
-    case 'fnSpotsScheduledValue':
-      value = fnSpotsScheduledValue(value1, dataObj);
-      break;
-    case 'fnSpotsPlayedValue':
-      value = fnSpotsPlayedValue(value1, dataObj);
-      break;
-    case 'fnTimeValue':
-      value = fnTimeValue(value1, data[2], dataObj);
-      break;
-    case 'fnLastPlayedOn':
-      value = fnLastPlayedOn(value1, dataObj);
-      break;
-    case 'fnTakenOn':
-      value = fnTakenOn(value1, dataObj);
-      break;
-    case 'fnScreenCodeValue':
-      value = fnScreenCodeValue(value1, dataObj);
-      break;
-  }
 
+  if (Array.isArray(colValue)) {
+
+    const functionName = colValue[0];
+    //when I used shift method and it changes also in the data structure my array,
+    // and broke the code
+    //I try your logic with filter
+    colValue.filter((i, id) => id !== 0)
+
+    switch (functionName) {
+      case 'fnStringValue':
+        value = fnStringValue(colValue, dataObj);
+        break;
+      case 'fnNumIntValue':
+        value = fnNumIntValue(colValue, dataObj);
+        break;
+      case 'fnSpotsMaxValue':
+        value = fnSpotsMaxValue(colValue, dataObj);
+        break;
+      case 'fnSpotsMovValue':
+        value = fnSpotsMovValue(colValue, dataObj);
+        break;
+      case 'fnNumNotIntValue':
+        value = fnNumNotIntValue(colValue, dataObj);
+        break;
+      case 'fnTakenCountValue':
+        value = fnTakenCountValue(colValue, dataObj);
+        break;
+      case 'fnPlayedCountValue':
+        value = fnPlayedCountValue(colValue, dataObj);
+        break;
+      case 'fnNotTakenCountValue':
+        value = fnNotTakenCountValue(colValue, dataObj);
+        break;
+      case 'fnNotPlayedCountValue':
+        value = fnNotPlayedCountValue(colValue, dataObj);
+        break;
+      case 'fnSpotsScheduledValue':
+        value = fnSpotsScheduledValue(colValue, dataObj);
+        break;
+      case 'fnSpotsPlayedValue':
+        value = fnSpotsPlayedValue(colValue, dataObj);
+        break;
+      case 'fnTimeValue':
+        value = fnTimeValue(colValue, dataObj);
+        break;
+      case 'fnLastPlayedOn':
+        value = fnLastPlayedOn(colValue, dataObj);
+        break;
+      case 'fnTakenOn':
+        value = fnTakenOn(colValue, dataObj);
+        break;
+      case 'fnScreenCodeValue':
+        value = fnScreenCodeValue(colValue, dataObj);
+        break;
+      case 'fnExpand':
+        value = fnExpand(colValue, dataObj);
+        break;
+      default:
+        value = '';
+    }
+  }
+  if (!Array.isArray(colValue) && colValue !== null) {
+    value = colValue || ' ';
+  }
+  if (colValue === null) {
+    value = '';
+  }
   return value;
 }
 

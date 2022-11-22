@@ -13,44 +13,19 @@ const TableBody = (props) => {
 
   const rowsDataList = tableData.map(tableDataItem => {
     const totalCellValue = [];
-
     tableColumnStructure.forEach(columnStructure => {
       const dataColValue = columnStructure.col_value;
       const dataColSubValue = columnStructure.col_subValue;
-//check all variant of value that we can get from db
-      if (columnStructure.col_visible){
-        if (Array.isArray(dataColValue) && Array.isArray(dataColSubValue)) {
-          const valueCell = getValueFunction(dataColValue, tableDataItem);
-          const subValueCell =  getValueFunction(dataColSubValue, tableDataItem);
-          return totalCellValue.push([valueCell,subValueCell]);
-        }
-        if (Array.isArray(dataColValue) && !Array.isArray(dataColSubValue)) {
-          const valueCell = getValueFunction(dataColValue, tableDataItem);
-          return totalCellValue.push(valueCell);
-        }
-        if (Array.isArray(dataColSubValue) && !Array.isArray(dataColValue)) {
-          const subValueCell = getValueFunction(dataColSubValue, tableDataItem);
-          return totalCellValue.push(subValueCell);
-        }
-
-        if (!Array.isArray(dataColSubValue) && dataColSubValue !== null) {
-          return totalCellValue.push(dataColSubValue);
-        }
-        if (!Array.isArray(dataColValue) && dataColValue !== null) {
-          return totalCellValue.push(dataColValue || ' ');
-        }
-        if(dataColValue === null || dataColSubValue === null){
-          return totalCellValue.push(' ');
-        }
-
+      if (columnStructure.col_visible) {
+        totalCellValue.push([getValueFunction(dataColValue, tableDataItem),
+          getValueFunction(dataColSubValue, tableDataItem)]);
       }
     });
+
     return totalCellValue
   })
 
   console.log(rowsDataList)
-
-
   const rows = rowsDataList.map((row, i) =>
     <TableRow key={row[i]} row={row}/>
   );

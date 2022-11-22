@@ -8,7 +8,7 @@ export const defaultTableState = {
         col_visible: true,
         col_label: '>',
         col_type: 'symbol',
-        col_value: '>',
+        col_value: ['fnExpand', 'expand'],
         col_subValue: null,
         col_width: 3,
         col_minWidth: 10,
@@ -140,7 +140,7 @@ export const defaultTableState = {
         spotsPlayedPercent: '22.22'
       },
       {
-        expand: 1,
+        expand: 0,
         orderId: 'QCS/006535/21-22',
         govtRoNo: 'AA-BB-CC-41',
         noOfSchedules: '2',
@@ -159,7 +159,7 @@ export const defaultTableState = {
         col_visible: true,
         col_label: '>',
         col_type: 'symbol',
-        col_value: '>',
+        col_value: ['fnExpand', 'expand'],
         col_subValue: null,
         col_width: 3,
         col_minWidth: 10,
@@ -204,7 +204,7 @@ export const defaultTableState = {
         col_label: 'Played \n Count',
         col_type: 'string',
         col_value: ['fnPlayedCountValue', 'totalPlayed'],
-        col_subValue: ['fnNotPlayedCountValue','totalNotPlayed'],
+        col_subValue: ['fnNotPlayedCountValue', 'totalNotPlayed'],
         col_width: 9,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -215,7 +215,7 @@ export const defaultTableState = {
         col_label: 'Spots \n Max/Sch.',
         col_type: 'string',
         col_value: ['fnSpotsMaxValue', 'spotsMaximum'],
-        col_subValue: ['fnSpotsScheduledValue','spotsScheduled'],
+        col_subValue: ['fnSpotsScheduledValue', 'spotsScheduled'],
         col_width: 9,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -226,7 +226,7 @@ export const defaultTableState = {
         col_label: 'Spots \n Mov./Play',
         col_type: 'string',
         col_value: ['fnSpotsMovValue', 'spotsPossible'],
-        col_subValue: ['fnSpotsPlayedValue','spotsPlayed'],
+        col_subValue: ['fnSpotsPlayedValue', 'spotsPlayed'],
         col_width: 9,
         col_minWidth: 100,
         col_sort: 'asc',
@@ -283,8 +283,8 @@ export const defaultTableState = {
         spotsPlayedPercent: '39.68'
       },
       {
-        expand: 1,
-        schedule: 'CMRShopMSI012011027ENAP22',
+        expand: 0,
+        schedule: 'AaaaaaCMRShopMSI012011027ENAP23',
         noOfScreens: '3',
         totalTaken: '2',
         totalNotTaken: '2',
@@ -297,7 +297,8 @@ export const defaultTableState = {
         takenPercent: '33.33',
         playedPercent: '33.33',
         spotsPlayedPercent: '39.68'
-      },],
+      },
+    ],
   },
   screensPage: {
     tableColumnStructure: [
@@ -306,7 +307,7 @@ export const defaultTableState = {
         col_visible: true,
         col_label: '>',
         col_type: 'symbol',
-        col_value: '>',
+        col_value: ['fnExpand', 0],
         col_subValue: null,
         col_width: 3,
         col_minWidth: 10,
@@ -525,7 +526,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayedPercent',
         col_visible: true,
-        col_label: 'Spots \n Percent',    
+        col_label: 'Spots \n Percent',
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'spotsPlayedPercent'],
         col_subValue: null,
