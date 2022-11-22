@@ -39,7 +39,7 @@ export const defaultTableState = {
       {
         col_name: 'noOfSchedules',
         col_visible: true,
-        col_label: 'Schedule \n Count',
+        col_label: 'Schedule\nCount',
         col_type: 'string',
         col_value: ['fnNumIntValue', 'noOfSchedules'],
         col_subValue: null,
@@ -50,7 +50,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsMaximum',
         col_visible: true,
-        col_label: 'Spots\n Maximum',
+        col_label: 'Spots\nMaximum',
         col_type: 'string',
         col_value: ['fnSpotsMaxValue', 'spotsMaximum'],
         col_subValue: null,
@@ -61,7 +61,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsScheduled',
         col_visible: true,
-        col_label: 'Spots \n Scheduled',
+        col_label: 'Spots\nScheduled',
         col_type: 'string',
         col_value: ['fnNumIntValue', 'spotsScheduled'],
         col_subValue: null,
@@ -72,7 +72,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPossible',
         col_visible: true,
-        col_label: 'Spots \n Movies',
+        col_label: 'Spots\nMovies',
         col_type: 'string',
         col_value: ['fnSpotsMovValue', 'spotsPossible'],
         col_subValue: null,
@@ -83,7 +83,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayed',
         col_visible: true,
-        col_label: 'Spots Played',
+        col_label: 'Spots\nPlayed',
         col_type: 'string',
         col_value: ['fnStringValue', 'spotsPlayed'],
         col_subValue: null,
@@ -94,7 +94,7 @@ export const defaultTableState = {
       {
         col_name: 'takenPercent',
         col_visible: true,
-        col_label: 'Taken \n Percent',
+        col_label: 'Taken\nPercent',
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'takenPercent'],
         col_subValue: null,
@@ -105,7 +105,7 @@ export const defaultTableState = {
       {
         col_name: 'playedPercent',
         col_visible: true,
-        col_label: 'Played \n Percent',
+        col_label: 'Played\nPercent',
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'playedPercent'],
         col_subValue: null,
@@ -116,7 +116,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayedPercent',
         col_visible: true,
-        col_label: 'Spots \n Percent',
+        col_label: 'Spots\nPercent',
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'spotsPlayedPercent'],
         col_subValue: null,
@@ -179,7 +179,7 @@ export const defaultTableState = {
       {
         col_name: 'noOfScreens',
         col_visible: true,
-        col_label: 'Screen \n Count',
+        col_label: 'Screen\nCount',
         col_type: 'string',
         col_value: ['fnStringValue', 'noOfScreens'],
         col_subValue: null,
@@ -190,7 +190,7 @@ export const defaultTableState = {
       {
         col_name: 'totalTaken',
         col_visible: true,
-        col_label: 'Taken \n Count',
+        col_label: 'Taken\nCount',
         col_type: 'string',
         col_value: ['fnTakenCountValue', 'totalTaken'],
         col_subValue: ['fnNotTakenCountValue', 'totalNotTaken'],
@@ -201,7 +201,7 @@ export const defaultTableState = {
       {
         col_name: 'totalPlayed',
         col_visible: true,
-        col_label: 'Played \n Count',
+        col_label: 'Played\nCount',
         col_type: 'string',
         col_value: ['fnPlayedCountValue', 'totalPlayed'],
         col_subValue: ['fnNotPlayedCountValue', 'totalNotPlayed'],
@@ -212,7 +212,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsMaximum',
         col_visible: true,
-        col_label: 'Spots \n Max/Sch.',
+        col_label: 'Spots\nMax/Sch.',
         col_type: 'string',
         col_value: ['fnSpotsMaxValue', 'spotsMaximum'],
         col_subValue: ['fnSpotsScheduledValue', 'spotsScheduled'],
@@ -223,7 +223,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPossible',
         col_visible: true,
-        col_label: 'Spots \n Mov./Play',
+        col_label: 'Spots\nMov./Play',
         col_type: 'string',
         col_value: ['fnSpotsMovValue', 'spotsPossible'],
         col_subValue: ['fnSpotsPlayedValue', 'spotsPlayed'],
@@ -234,7 +234,7 @@ export const defaultTableState = {
       {
         col_name: 'takenPercent',
         col_visible: true,
-        col_label: 'Taken \n Percent',
+        col_label: 'Taken\nPercent',
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'takenPercent'],
         col_subValue: null,
@@ -245,7 +245,7 @@ export const defaultTableState = {
       {
         col_name: 'playedPercent',
         col_visible: true,
-        col_label: 'Played \n Percent',
+        col_label: 'Played\nPercent',
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'playedPercent'],
         col_subValue: null,
@@ -256,7 +256,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayedPercent',
         col_visible: true,
-        col_label: 'Spots \n Percent',
+        col_label: 'Spots\nPercent',
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'spotsPlayedPercent'],
         col_subValue: null,
@@ -327,7 +327,7 @@ export const defaultTableState = {
       {
         col_name: 'scheduleStatus',
         col_visible: true,
-        col_label: 'Schedule \n Status',
+        col_label: 'Schedule\nStatus',
         col_type: 'string',
         col_value: ['fnStringValue', 'scheduleStatus'],
         col_subValue: ['fnTakenOn', 'takenOn'],
@@ -338,7 +338,7 @@ export const defaultTableState = {
       {
         col_name: 'playLogStatus',
         col_visible: true,
-        col_label: 'Playlog \n Status',
+        col_label: 'Playlog\nStatus',
         col_type: 'string',
         col_value: ['fnStringValue', 'playLogStatus'],
         col_subValue: ['fnLastPlayedOn', 'lastPlayedOn'],
@@ -349,7 +349,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsMaximum',
         col_visible: true,
-        col_label: 'Spots \n Maximum',
+        col_label: 'Spots\nMaximum',
         col_type: 'string',
         col_value: ['fnSpotsMaxValue', 'spotsMaximum'],
         col_subValue: null,
@@ -360,7 +360,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsScheduled',
         col_visible: true,
-        col_label: 'Spots \n Scheduled',
+        col_label: 'Spots\nScheduled',
         col_type: 'string',
         col_value: ['fnNumIntValue', 'spotsScheduled'],
         col_subValue: null,
@@ -371,7 +371,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPossible',
         col_visible: true,
-        col_label: 'Spots \n Movies',
+        col_label: 'Spots\nMovies',
         col_type: 'string',
         col_value: ['fnSpotsMovValue', 'spotsPossible'],
         col_subValue: null,
@@ -382,7 +382,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayed',
         col_visible: true,
-        col_label: 'Spots \n Played',
+        col_label: 'Spots\nPlayed',
         col_type: 'string',
         col_value: ['fnStringValue', 'spotsPlayed'],
         col_subValue: null,
@@ -393,7 +393,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayedPercent',
         col_visible: true,
-        col_label: 'Spots \n Percent',
+        col_label: 'Spots\nPercent',
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'spotsPlayedPercent'],
         col_subValue: null,
@@ -471,7 +471,7 @@ export const defaultTableState = {
       {
         col_name: 'prefPosition',
         col_visible: true,
-        col_label: 'Pref. \n Position',
+        col_label: 'Pref.\nPosition',
         col_type: 'string',
         col_value: ['fnStringValue', 'prefPosition'],
         col_subValue: null,
@@ -482,7 +482,7 @@ export const defaultTableState = {
       {
         col_name: 'moviesPlayed',
         col_visible: true,
-        col_label: 'Movie \n Played',
+        col_label: 'Movie\nPlayed',
         col_type: 'string',
         col_value: ['fnStringValue', 'moviesPlayed'],
         col_subValue: null,
@@ -504,7 +504,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsScheduled',
         col_visible: true,
-        col_label: 'Spots \n Scheduled',
+        col_label: 'Spots\nScheduled',
         col_type: 'string',
         col_value: ['fnNumIntValue', 'spotsScheduled'],
         col_subValue: null,
@@ -515,7 +515,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayed',
         col_visible: true,
-        col_label: 'Spots \n Played',
+        col_label: 'Spots\nPlayed',
         col_type: 'string',
         col_value: ['fnStringValue', 'spotsPlayed'],
         col_subValue: null,
@@ -526,7 +526,7 @@ export const defaultTableState = {
       {
         col_name: 'spotsPlayedPercent',
         col_visible: true,
-        col_label: 'Spots \n Percent',
+        col_label: 'Spots\nPercent',
         col_type: 'string',
         col_value: ['fnNumNotIntValue', 'spotsPlayedPercent'],
         col_subValue: null,

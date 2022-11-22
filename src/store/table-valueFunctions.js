@@ -1,142 +1,142 @@
-function fnNumIntValue(arg, dataObj) {
+function fnNumIntValue(dataObj, argList) {  // arglist always at the end
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = dataObj[value]
+      result = dataObj[value];
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnNumNotIntValue(arg, dataObj) {
+function fnNumNotIntValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = dataObj[value]
+      result = dataObj[value];
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnSpotsMaxValue(arg, dataObj) {
+function fnSpotsMaxValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = `Max: ${dataObj[value]}`
+      result = `Max: ${dataObj[value]}`;
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnTakenCountValue(arg, dataObj) {
+function fnTakenCountValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = `Taken: ${dataObj[value]}`
+      result = `Taken: ${dataObj[value]}`;
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnStringValue(arg, dataObj) {
+function fnStringValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = dataObj[value]
+      result = dataObj[value];
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnSpotsMovValue(arg, dataObj) {
+function fnSpotsMovValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = `Movies: ${dataObj[value]}`
+      result = `Movies: ${dataObj[value]}`;
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnPlayedCountValue(arg, dataObj) {
+function fnPlayedCountValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
       result = `Played: ${dataObj[value]}`
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnSpotsPlayedValue(arg, dataObj) {
+function fnSpotsPlayedValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = `Played: ${dataObj[value]}`
+      result = `Played: ${dataObj[value]}`;
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnSpotsScheduledValue(arg, dataObj) {
+function fnSpotsScheduledValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = `Sch ${dataObj[value]}`
+      result = `Sch ${dataObj[value]}`;
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnNotPlayedCountValue(arg, dataObj) {
+function fnNotPlayedCountValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = `Not Played ${dataObj[value]}`
+      result = `Not Played ${dataObj[value]}`;
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnNotTakenCountValue(arg, dataObj) {
+function fnNotTakenCountValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = `Not Taken: ${dataObj[value]}`
+      result = `Not Taken: ${dataObj[value]}`;
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnTimeValue(arg, dataObj) {
+function fnTimeValue(dataObj, argList) {
   let result;
-  arg.forEach((value, i) => {
+  argList.forEach((value, i) => {
     if (`${value}` in dataObj) {
-      result += `${dataObj[value]}`
+      result += `${dataObj[value]}`;
     } else {
-      result = ' '
+      result = '';
     }
     if (i === 1) {
       result += ` - `
@@ -145,129 +145,165 @@ function fnTimeValue(arg, dataObj) {
   return result;
 }
 
-function fnLastPlayedOn(arg, dataObj) {
+function fnLastPlayedOn(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = dataObj[value]
+      result = dataObj[value];
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnTakenOn(arg, dataObj) {
+function fnTakenOn(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = dataObj[value]
+      result = dataObj[value];
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnScreenCodeValue(arg, dataObj) {
+function fnScreenCodeValue(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
-      result = `Code: ${dataObj[value]}`
+      result = `Code: ${dataObj[value]}`;
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
 }
 
-function fnExpand(arg, dataObj) {
+function fnExpand(dataObj, argList) {
   let result;
-  arg.forEach((value) => {
+  argList.forEach((value) => {
     if (`${value}` in dataObj) {
       if (dataObj[value] === 0) {
-        result = `>`
+        result = `>`;
       } else {
-        result = '⋁'
+        result = 'v';
       }
     } else {
-      result = ' '
+      result = '';
     }
   })
   return result;
-
 }
 
+
+// Case1: No value (null) in col_value | col_subValue
+//        In this case a blank value is returned
+//
+// Case2: 1 value is passed in col_value | col_subValue
+//        In this case returns the element from the data table
+//
+// Case3: 2 or more values in col_value | col_subValue
+//        In this case 1st value is function and remaining args to that function
+//        The function is executed and it returns a value
+
+// Desc:  Finds, proceses and returns the value for Case2 & Case3
 const getValueFunction = function (colValue, dataObj) {
+
+  // Case1: blank or null
+  if (colValue == '' || colValue == null) return '';  // log error
+
+  // error handling ... 
+  if  (!Array.isArray(colValue)) return '';
+
+  // Case2: 1 value is passed 
+  // if colValue does not exit null returned so padded
+  if (colValue.length == 1) return dataObj[colValue] || '';
+ 
   let value;
 
+  // Case3: 2 or more values is passed
   if (Array.isArray(colValue)) {
 
+    // first argument is the function name
     const functionName = colValue[0];
+    // remaining arguments are the parameters to be passed
+    const argList = colValue.slice(1);
+
     //when I used shift method and it changes also in the data structure my array,
     // and broke the code
     //I try your logic with filter
-    colValue.filter((i, id) => id !== 0)
+    // colValue.filter((i, id) => id !== 0)
 
     switch (functionName) {
       case 'fnStringValue':
-        value = fnStringValue(colValue, dataObj);
+        // can use spread operator ... so that fn can work directly without forEach
+        //value = fnStringValue(dataObj, ...argList);  CHECK:  
+        
+        value = fnStringValue(dataObj, argList);    // argument list always at the end
         break;
       case 'fnNumIntValue':
-        value = fnNumIntValue(colValue, dataObj);
+        value = fnNumIntValue(dataObj, argList);
         break;
       case 'fnSpotsMaxValue':
-        value = fnSpotsMaxValue(colValue, dataObj);
+        value = fnSpotsMaxValue(dataObj, argList);
         break;
       case 'fnSpotsMovValue':
-        value = fnSpotsMovValue(colValue, dataObj);
+        value = fnSpotsMovValue(dataObj, argList);
         break;
       case 'fnNumNotIntValue':
-        value = fnNumNotIntValue(colValue, dataObj);
+        value = fnNumNotIntValue(dataObj, argList);
         break;
       case 'fnTakenCountValue':
-        value = fnTakenCountValue(colValue, dataObj);
+        value = fnTakenCountValue(dataObj, argList);
         break;
       case 'fnPlayedCountValue':
-        value = fnPlayedCountValue(colValue, dataObj);
+        value = fnPlayedCountValue(dataObj, argList);
         break;
       case 'fnNotTakenCountValue':
-        value = fnNotTakenCountValue(colValue, dataObj);
+        value = fnNotTakenCountValue(dataObj, argList);
         break;
       case 'fnNotPlayedCountValue':
-        value = fnNotPlayedCountValue(colValue, dataObj);
+        value = fnNotPlayedCountValue(dataObj, argList);
         break;
       case 'fnSpotsScheduledValue':
-        value = fnSpotsScheduledValue(colValue, dataObj);
+        value = fnSpotsScheduledValue(dataObj, argList);
         break;
       case 'fnSpotsPlayedValue':
-        value = fnSpotsPlayedValue(colValue, dataObj);
+        value = fnSpotsPlayedValue(dataObj, argList);
         break;
       case 'fnTimeValue':
-        value = fnTimeValue(colValue, dataObj);
+        value = fnTimeValue(dataObj, argList);
         break;
       case 'fnLastPlayedOn':
-        value = fnLastPlayedOn(colValue, dataObj);
+        value = fnLastPlayedOn(dataObj, argList);
         break;
       case 'fnTakenOn':
-        value = fnTakenOn(colValue, dataObj);
+        value = fnTakenOn(dataObj, argList);
         break;
       case 'fnScreenCodeValue':
-        value = fnScreenCodeValue(colValue, dataObj);
+        value = fnScreenCodeValue(dataObj, argList);
         break;
       case 'fnExpand':
-        value = fnExpand(colValue, dataObj);
+        value = fnExpand(dataObj, argList);
         break;
       default:
         value = '';
     }
   }
+  /*        
+  // always use if -> else if -> else 
+  // otherwise each condition is checked
+
   if (!Array.isArray(colValue) && colValue !== null) {
     value = colValue || ' ';
   }
   if (colValue === null) {
     value = '';
-  }
+  } 
+  */
+
   return value;
 }
 

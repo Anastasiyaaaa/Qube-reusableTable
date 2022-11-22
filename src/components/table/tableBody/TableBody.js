@@ -11,18 +11,29 @@ const TableBody = (props) => {
   // and show label only if column in Structure is visible
 
 
+  // Case1: No value (null) in col_value | col_subValue
+  //        In this case a blank value is returned
+  //
+  // Case2: 1 value is passed in col_value | col_subValue
+  //        In this case returns the element from the data table
+  //
+  // Case3: 2 or more values in col_value | col_subValue
+  //        In this case 1st value is function and remaining args to that function
+  //        The function is executed and it returns a value
+
   const rowsDataList = tableData.map(tableDataItem => {
     const totalCellValue = [];
     tableColumnStructure.forEach(columnStructure => {
       const dataColValue = columnStructure.col_value;
       const dataColSubValue = columnStructure.col_subValue;
+
       if (columnStructure.col_visible) {
         totalCellValue.push([getValueFunction(dataColValue, tableDataItem),
           getValueFunction(dataColSubValue, tableDataItem)]);
-      }
+        }
     });
 
-    return totalCellValue
+    return totalCellValue;
   })
 
   console.log(rowsDataList)
