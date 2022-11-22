@@ -6,12 +6,8 @@ const TableColumn = (props) => {
   if (props.subLabel.trim().length >= 1) {
     columnValue =
       <td className='innerColumnRow'>
-        <tr>
-          <td>{props.label}</td>
-        </tr>
-        <tr>
-          <td>{props.subLabel}</td>
-        </tr>
+        <div>{props.label}</div>
+        <div>{props.subLabel}</div>
       </td>;
   } else {
     columnValue = <td> {props.label} </td>;
