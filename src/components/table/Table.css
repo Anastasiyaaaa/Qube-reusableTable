@@ -26,3 +26,6 @@
     text-align: center;
     white-space:pre;
 }
+.table .innerColumnRow td{
+    border-bottom: 0;
+}
