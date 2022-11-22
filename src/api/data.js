@@ -307,7 +307,7 @@ export const defaultTableState = {
         col_visible: true,
         col_label: '>',
         col_type: 'symbol',
-        col_value: ['fnExpand', 0],
+        col_value: ['fnExpand', 'expand'],
         col_subValue: null,
         col_width: 3,
         col_minWidth: 10,
